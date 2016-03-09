@@ -1,0 +1,32 @@
+# $Id: PKGBUILD 250508 2015-11-09 22:59:15Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=gnome-nibbles
+pkgver=3.19.90
+pkgrel=1
+pkgdesc="Guide a worm around a maze"
+arch=('i686' 'x86_64')
+license=('GPL')
+depends=('hicolor-icon-theme' 'clutter-gtk' 'libcanberra' 'librsvg' 'libgames-support')
+makedepends=('intltool' 'itstool' 'gobject-introspection')
+conflicts=('gnome-games')
+replaces=('gnome-games')
+options=('!emptydirs')
+install=gnome-nibbles.install
+url="https://wiki.gnome.org/Apps/Nibbles"
+groups=('gnome-extra')
+source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('9ac3f848b2e9f43899b2131c07467d9b')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+      --disable-schemas-compile
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

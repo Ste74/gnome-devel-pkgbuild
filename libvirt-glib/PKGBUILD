@@ -1,0 +1,30 @@
+# $Id: PKGBUILD 141599 2015-09-25 11:00:57Z spupykin $
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Stefano Facchini <stefano.facchini@gmail.com>
+
+pkgname=libvirt-glib
+pkgver=0.2.3
+pkgrel=1
+pkgdesc="GLib bindings for libvirt"
+arch=('i686' 'x86_64')
+url="http://libvirt.org"
+license=('LGPL2.1')
+depends=('libvirt' 'libcap-ng')
+makedepends=('intltool' 'gobject-introspection' 'vala')
+source=(ftp://libvirt.org/libvirt/glib/$pkgname-$pkgver.tar.gz)
+md5sums=('a19c9b644dd5f2b9e3e1a4a21f34e2e0')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  ./configure --prefix=/usr \
+              --disable-static \
+              --with-python=/usr/bin/python2
+  make -j1
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+}
+
+# vim:set ts=2 sw=2 et:

@@ -1,0 +1,31 @@
+# $Id: PKGBUILD 249142 2015-10-13 07:58:20Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=yelp
+pkgver=3.19.90
+pkgrel=1
+pkgdesc="A help browser for GNOME"
+arch=('i686' 'x86_64')
+depends=('webkit2gtk' 'yelp-xsl' 'libxslt' 'hicolor-icon-theme' 'xz' 'bzip2'
+         'desktop-file-utils' 'dconf')
+makedepends=('intltool' 'gtk-doc' 'itstool')
+groups=('gnome')
+license=('GPL')
+options=('!emptydirs')
+url="http://www.gnome.org"
+install=yelp.install
+source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('ec7305242cf256aaf6e1c83f32709239')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc \
+      --localstatedir=/var --disable-static
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

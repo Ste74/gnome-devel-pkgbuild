@@ -1,0 +1,29 @@
+# $Id: PKGBUILD 250802 2015-11-12 10:48:17Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=dconf-editor
+pkgver=3.19.3
+pkgrel=1
+pkgdesc="dconf Editor"
+arch=(i686 x86_64)
+url="http://live.gnome.org/dconf"
+license=('LGPL2.1')
+groups=('gnome')
+depends=('gtk3' 'dconf')
+makedepends=('vala' 'intltool')
+install=dconf-editor.install
+source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('a66cc74c9db09b061335fbbc4a8ed0ca')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:

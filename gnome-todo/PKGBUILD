@@ -1,0 +1,32 @@
+# Maintainer: Mirco Tischler <mt-ml at gmx dot de>
+
+pkgname=gnome-todo
+pkgver=3.19.90
+pkgrel=1
+pkgdesc='a personal task manager for GNOME'
+arch=('i686' 'x86_64')
+url='https://wiki.gnome.org/Apps/ToDo'
+license=('GPL3')
+depends=('evolution-data-server' 'libpeas')
+makedepends=('intltool' 'gnome-common' 'appstream-glib')
+install='gnome-todo.install'
+_srcname="GNOME_TODO_$(echo ${pkgver}|sed 's|\.|_|g')"
+source=("https://git.gnome.org/browse/${pkgname}/snapshot/$_srcname.tar.xz")
+md5sums=('55450117a5aa0c85e7ceac4c190bfb21')
+
+#prepare() {
+#  cd "$srcdir/$_srcname"
+#
+#  patch -p1 -i ../build-fix.patch
+#}
+
+build() {
+  cd "$srcdir/$_srcname"
+  ./autogen.sh --prefix=/usr --disable-schemas-compile
+  make
+}
+
+package() {
+  cd "$srcdir/$_srcname"
+  make DESTDIR="${pkgdir}" install
+}

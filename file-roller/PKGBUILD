@@ -1,0 +1,38 @@
+# $Id: PKGBUILD 248547 2015-10-08 19:50:16Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=file-roller
+pkgver=3.19.90
+pkgrel=1
+pkgdesc="Create and modify archives"
+arch=('i686' 'x86_64')
+license=('GPL')
+depends=('desktop-file-utils' 'gtk3' 'hicolor-icon-theme' 'dconf' 'libarchive' 'file' 'json-glib' 'libnotify' 'zip' 'unzip')
+makedepends=('intltool' 'pkg-config' 'libnautilus-extension' 'itstool' 'docbook-xsl')
+optdepends=('p7zip: 7z, arj, exe and encrypted zip files support'
+            'unrar: better RAR archive support'
+            'unace: ACE archive support'
+            'lrzip: lrzip archive support'
+            'cdrkit: ISO image support')
+groups=('gnome-extra')
+options=('!emptydirs')
+install=file-roller.install
+url="http://www.gnome.org"
+source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('35bfc71838bc1498b12d0e35f75aacdf')
+
+build() {
+  cd $pkgname-$pkgver
+
+  ./configure --prefix=/usr --sysconfdir=/etc \
+      --libexecdir=/usr/lib/file-roller \
+      --localstatedir=/var --disable-static \
+      --disable-schemas-compile
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

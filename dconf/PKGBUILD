@@ -1,0 +1,30 @@
+# $Id: PKGBUILD 235826 2015-04-09 18:44:51Z heftig $
+# Maintainer: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=dconf
+pkgver=0.25.1
+pkgrel=1
+pkgdesc="A low-level configuration system."
+arch=(i686 x86_64)
+url="http://live.gnome.org/dconf"
+license=('LGPL2.1')
+depends=('glib2' 'libdbus')
+makedepends=('vala' 'intltool' 'docbook-xsl' 'python2')
+install=dconf.install
+source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('20e062b793a5c0de31c4be312a91422f')
+
+build() {
+  cd "$pkgname-$pkgver"
+
+  ./configure --prefix=/usr --sysconfdir=/etc \
+    --libexecdir=/usr/lib/dconf
+  make
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make completiondir=/usr/share/bash-completion/completions DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:

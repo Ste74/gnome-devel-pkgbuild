@@ -1,0 +1,31 @@
+# $Id: PKGBUILD 249809 2015-10-27 22:33:25Z heftig $
+# Maintainer: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=gjs
+pkgver=1.44.0
+pkgrel=1
+pkgdesc="Javascript Bindings for GNOME"
+arch=(i686 x86_64)
+url="http://live.gnome.org/Gjs"
+license=(GPL)
+depends=(cairo gobject-introspection-runtime 'js>=24.2.0' 'gtk3')
+makedepends=('gobject-introspection')
+source=(http://ftp.gnome.org/pub/gnome/sources/gjs/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('a79cb5338be0a31ed0882279bc59e48f')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --disable-static --libexecdir=/usr/lib
+  make
+}
+
+check() {
+  cd $pkgname-$pkgver
+  # Needs a display
+  make -k check || :
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

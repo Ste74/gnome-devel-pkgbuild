@@ -1,0 +1,26 @@
+# $Id: PKGBUILD 248524 2015-10-08 19:49:39Z heftig $
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+
+pkgname=atk
+pkgver=2.19.90
+pkgrel=1
+pkgdesc="A library providing a set of interfaces for accessibility"
+arch=(i686 x86_64)
+license=('LGPL')
+depends=('glib2')
+makedepends=('gobject-introspection')
+source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+url='https://developer.gnome.org/atk/'
+md5sums=('578c3dcf644a13030c84a445a13d794b')
+
+build() {
+  cd "$pkgname-$pkgver"
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+}
+

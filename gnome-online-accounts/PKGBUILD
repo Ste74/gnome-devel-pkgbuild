@@ -1,0 +1,31 @@
+# $Id: PKGBUILD 250758 2015-11-11 19:07:00Z heftig $
+# Maintainer: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=gnome-online-accounts
+pkgver=3.19.90
+pkgrel=1
+pkgdesc="GNOME service to access online accounts"
+arch=(i686 x86_64)
+url="http://www.gnome.org"
+license=('GPL')
+depends=('webkit2gtk' 'json-glib' 'libnotify' 'rest' 'libsecret' 'telepathy-glib' 'krb5' 'gcr')
+makedepends=('intltool' 'libxslt' 'gobject-introspection' 'docbook-xsl')
+optdepends=('gvfs-goa: Virtual file systems (e.g. OwnCloud)'
+            'gvfs-google: Google Drive')
+install=$pkgname.install
+source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('1eb598390a2e0727f113fa374fab9eb7')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --libexecdir=/usr/lib/$pkgname --disable-static \
+    --enable-media-server --enable-kerberos --enable-lastfm
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make -j1 DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:

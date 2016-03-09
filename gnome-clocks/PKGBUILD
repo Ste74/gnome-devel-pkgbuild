@@ -1,0 +1,33 @@
+# $Id: PKGBUILD 248570 2015-10-08 19:50:56Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=gnome-clocks
+pkgver=3.19.2
+pkgrel=1
+pkgdesc="Clocks applications for GNOME"
+arch=(i686 x86_64)
+url="https://www.gnome.org/"
+license=(GPL)
+depends=(gtk3 libcanberra libgweather gnome-desktop
+         hicolor-icon-theme gnome-themes-standard geoclue2 geocode-glib gsound)
+makedepends=(intltool vala gobject-introspection itstool)
+groups=(gnome-extra)
+install=gnome-clocks.install
+source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
+md5sums=('c341eef0218222ee5667e4752a85fc1e')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+  make
+}
+
+check() {
+  cd $pkgname-$pkgver
+  make check
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,39 @@
+# $Id: PKGBUILD 244925 2015-08-27 17:19:28Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=colord
+pkgver=1.3.1
+pkgrel=1
+pkgdesc="System daemon for managing color devices"
+arch=(i686 x86_64)
+url="http://www.freedesktop.org/software/colord"
+license=(GPL2)
+depends=(lcms2 libgusb polkit sqlite systemd dconf dbus libgudev)
+makedepends=(intltool gobject-introspection vala docbook2x sane bash-completion
+             argyllcms)
+optdepends=('sane: scanner support'
+            'argyllcms: color profiling')
+replaces=('shared-color-profiles')
+install=colord.install
+source=($url/releases/$pkgname-$pkgver.tar.xz)
+sha1sums=('27a6eb07f8ee388004f8196fcb0a1308a5c85e53')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+    --libexecdir=/usr/lib/$pkgname --disable-static \
+    --with-systemdsystemunitdir=/usr/lib/systemd/system \
+    --enable-vala --enable-sane --with-daemon-user=colord
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+
+  # the build system has no colord user, so the chown fails
+  chown -R 124:124 "$pkgdir/var/lib/colord"
+}
+
+# vim:set ts=2 sw=2 et:

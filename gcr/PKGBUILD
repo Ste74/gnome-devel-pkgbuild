@@ -1,0 +1,51 @@
+# $Id: PKGBUILD 248551 2015-10-08 19:50:21Z heftig $
+# Maintainer: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=gcr
+pkgver=3.19.4
+pkgrel=1
+pkgdesc="A library for bits of crypto UI and parsing"
+arch=(i686 x86_64)
+url="http://www.gnome.org"
+license=('GPL2')
+depends=('dconf' 'desktop-file-utils' 'gtk3' 'hicolor-icon-theme' 'libgcrypt'
+         'p11-kit')
+makedepends=('intltool' 'gobject-introspection' 'python' 'vala' 'libxslt')
+options=('!makeflags')
+install=gcr.install
+source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
+        10-gcr.conf)
+md5sums=('e22abe7a120bcd5aba67bff4228875be'
+         '588f6646462ccde13a68d7b7a7b3fe98')
+
+prepare() {
+  mkdir path
+  ln -s /usr/bin/python2 path/python
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  ./configure --prefix=/usr \
+    --libexec=/usr/lib/gcr \
+    --disable-static \
+    --disable-update-mime \
+    --disable-schemas-compile
+  make
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  PATH="$srcdir/path:$PATH" dbus-run-session make -k check || :
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+
+  # gcr wants to lock some memory to prevent swapping out private keys
+  # https://bugs.archlinux.org/task/32616
+  # https://bugzilla.gnome.org/show_bug.cgi?id=688161
+  install -Dm644 ../10-gcr.conf "$pkgdir/etc/security/limits.d/10-gcr.conf"
+}
+
+# vim:set ts=2 sw=2 et:

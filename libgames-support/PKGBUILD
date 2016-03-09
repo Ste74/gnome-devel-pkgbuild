@@ -1,0 +1,25 @@
+# $Id: PKGBUILD 248515 2015-10-08 19:48:29Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+
+pkgname=libgames-support
+pkgver=0.90
+pkgrel=1
+pkgdesc="Code shared between GNOME games"
+url="https://git.gnome.org/browse/libgames-support/"
+license=(LGPL)
+arch=(i686 x86_64)
+depends=(gtk3 libgee)
+makedepends=(gobject-introspection vala intltool)
+source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+md5sums=('9d50edf60cba6a5e2428a5529b74c955')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --disable-static
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}
