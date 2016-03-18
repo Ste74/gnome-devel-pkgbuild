@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=polari
-pkgver=3.19.4
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="An IRC Client for GNOME"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ makedepends=(intltool gobject-introspection desktop-file-utils appdata-tools)
 groups=(gnome-extra)
 install=polari.install
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('e639c13458861d55db5aacb820f4ed86')
+md5sums=('e9c6afaab0dbeb24019a2087ff6ac98c')
 
 build() {
   cd $pkgname-$pkgver
