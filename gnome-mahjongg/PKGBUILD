@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-mahjongg
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="Disassemble a pile of tiles by removing matching pairs"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=gnome-mahjongg.install
 url="https://live.gnome.org/Mahjongg"
 groups=('gnome-extra')
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('2aacd4a59ef723f8528f805f1df5c2b4')
+md5sums=('c2b4d06809fb77f2a4a631dc88222281')
 
 build() {
   cd $pkgname-$pkgver
