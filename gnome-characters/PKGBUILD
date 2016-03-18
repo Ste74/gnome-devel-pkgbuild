@@ -3,7 +3,7 @@
 
 pkgname=gnome-characters
 pkgver=3.19.90
-pkgrel=1
+pkgrel=3
 pkgdesc="Simple utility application to find and insert unusual characters"
 arch=(i686 x86_64)
 url="http://gnome.org"
