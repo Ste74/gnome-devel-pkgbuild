@@ -3,7 +3,7 @@
 # Contributor: Flamelab <panosfilip@gmail.com
 
 pkgname=gnome-shell
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="The next generation GNOME Shell"
 arch=(i686 x86_64)
@@ -20,7 +20,7 @@ install=gnome-shell.install
 groups=(gnome)
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
         nm-libexecdir.patch)
-md5sums=('10ebd8cda8e7e43834e77eb511822369'
+md5sums=('f2dac3875dc0cd5e1b5ff7724d4b78d1'
          'e50bd6fddfb633b97aa0556ffd1d86f2')
 
 prepare() {
