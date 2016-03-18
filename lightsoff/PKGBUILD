@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=lightsoff
-pkgver=3.19.90
+pkgver=3.19.91
 pkgrel=1
 pkgdesc="Turn off all the lights"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=lightsoff.install
 url="https://live.gnome.org/Lightsoff"
 groups=('gnome-extra')
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('78fa04a598e6eef5069a793137512097')
+md5sums=('ba8253c0aa88c7970a69b356fdd105a8')
 
 build() {
   cd $pkgname-$pkgver
