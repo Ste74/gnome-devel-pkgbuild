@@ -1,0 +1,37 @@
+# $Id: PKGBUILD 261133 2016-03-07 07:54:55Z jgc $
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+
+pkgname=gnome-terminal
+pkgver=3.18.3
+pkgrel=1
+pkgdesc="The GNOME Terminal Emulator"
+arch=(i686 x86_64)
+license=(GPL)
+depends=(vte3 gsettings-desktop-schemas dconf)
+makedepends=(intltool itstool docbook-xsl desktop-file-utils
+             libnautilus-extension appdata-tools gnome-shell gconf vala)
+optdepends=('gconf: settings migration when upgrading from older version')
+options=('!emptydirs')
+url="http://www.gnome.org"
+groups=('gnome')
+install=gnome-terminal.install
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('14c2fce1c6a80a3fb0cc8666d7752228adcb60d199634ab69150de32e3c17d56')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+    --libexecdir=/usr/lib/$pkgname --disable-static --with-nautilus-extension
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+check() {
+  cd $pkgname-$pkgver
+  make check
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}
