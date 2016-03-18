@@ -1,6 +1,6 @@
 # Maintainer: Bernd Prünster <aur@berndpruenster.org>
 pkgname=gspell
-pkgver=0.2.2
+pkgver=0.2.6
 pkgrel=1
 pkgdesc=" a flexible API to implement the spell checking in a GTK+ application"
 arch=('i686' 'x86_64')
@@ -9,7 +9,7 @@ license=('GPL2')
 depends=('gtk3' 'gtksourceview3' 'enchant' 'libxml2' 'iso-codes')
 makedepends=('intltool' 'itstool')
 source=("https://download.gnome.org/sources/gspell/${pkgver%.*}/gspell-${pkgver}.tar.xz")
-md5sums=('6faf345b19c7c53e8e080578cfbd1a79')
+md5sums=('525f2450cdcded8cb1bfa7a61187b99a')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}
