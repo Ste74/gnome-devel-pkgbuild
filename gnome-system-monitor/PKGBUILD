@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-system-monitor
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="A system monitor for GNOME"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ url="http://www.gnome.org"
 groups=('gnome')
 install=gnome-system-monitor.install
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('4c7d08c504fc9ce9775736fdda724ffc')
+md5sums=('fc87dc26c34e4c540d7373ed103776ba')
 
 build() {
   cd $pkgname-$pkgver
