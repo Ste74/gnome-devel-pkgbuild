@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=five-or-more
-pkgver=3.19.4
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="Remove colored balls from the board by forming lines"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=five-or-more.install
 url="https://live.gnome.org/Five%20or%20more"
 groups=('gnome-extra')
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('67bc69273364a3f5f04667b0e840b487')
+md5sums=('d6362f67170f70237ff756ce0e4a4026')
 
 build() {
   cd $pkgname-$pkgver
