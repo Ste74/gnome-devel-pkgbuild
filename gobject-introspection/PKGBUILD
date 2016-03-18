@@ -3,14 +3,14 @@
 
 pkgbase=gobject-introspection
 pkgname=('gobject-introspection' 'gobject-introspection-runtime')
-pkgver=1.47.1
+pkgver=1.47.92
 pkgrel=1
 url="https://live.gnome.org/GObjectIntrospection"
 arch=('x86_64' 'i686')
 license=('LGPL' 'GPL')
 makedepends=('cairo' 'python2' 'python2-mako')
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-md5sums=('8548fed2f999902accbf45cafe5a078c')
+md5sums=('dd862cf86e95e09c0e18b721f68baecb')
 
 prepare() {
   cd $pkgbase-$pkgver
