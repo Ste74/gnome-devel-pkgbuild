@@ -3,14 +3,14 @@
 
 pkgbase=pygobject
 pkgname=(python-gobject python2-gobject pygobject-devel)
-pkgver=3.19.2
+pkgver=3.19.92
 pkgrel=1
 arch=(i686 x86_64)
 url="https://live.gnome.org/PyGObject"
 license=(LGPL)
 makedepends=(python python2 python-cairo python2-cairo gobject-introspection gnome-common)
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-md5sums=('491ec82830a2f331cf7adef89604ea39')
+md5sums=('11d9baa5060b572e471ee4bb5d85a0c3')
 
 prepare() {
   mkdir build-py2 build-py3 devel
