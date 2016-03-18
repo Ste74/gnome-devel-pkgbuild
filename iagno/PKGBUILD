@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=iagno
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="Dominate the board in a classic version of Reversi"
 arch=('i686' 'x86_64')
@@ -29,4 +29,4 @@ package() {
   cd $pkgname-$pkgver
   make DESTDIR="$pkgdir" install
 }
-md5sums=('b844e6a2054636197435486dfc768c47')
+md5sums=('e646a3bc78b921a037f432c959489dc4')
