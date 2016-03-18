@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gedit
-pkgver=3.19.4
+pkgver=3.19.5
 pkgrel=1
 pkgdesc="A text editor for GNOME"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ options=('!emptydirs')
 url="http://www.gnome.org"
 install=gedit.install
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('68897cc49fe3cb14e86dbda2c8f34a3b')
+md5sums=('0d4da4b1960873b6ae4ac10b53992a6d')
 
 build() {
   cd $pkgname-$pkgver
