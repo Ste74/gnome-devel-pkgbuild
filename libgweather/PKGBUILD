@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot  <jgc@archlinux.org>
 
 pkgname=libgweather
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="Provides access to weather information from the net"
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ options=('!emptydirs')
 url="http://www.gnome.org/"
 install=libgweather.install
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('ae0f428c5db6c176240a2438d2c2a721')
+md5sums=('2865d864f28059183e17548da37600d6')
 
 build() {
     cd "$pkgname-$pkgver"
