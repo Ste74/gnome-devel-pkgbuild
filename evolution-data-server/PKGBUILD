@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=evolution-data-server
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="Centralized access to appointments and contacts"
 arch=(i686 x86_64)
@@ -12,7 +12,7 @@ install=$pkgname.install
 url="https://wiki.gnome.org/Apps/Evolution"
 license=(GPL)
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('16757b09892a33319e245f96ca3ae559')
+md5sums=('1732dfcbb4fbced474147ff6f41397de')
 
 build() {
   cd "$pkgname-$pkgver"
