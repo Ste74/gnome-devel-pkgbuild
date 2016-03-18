@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=bijiben
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="Write out notes, every detail matters"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ options=(!emptydirs)
 groups=(gnome-extra)
 install=bijiben.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-md5sums=('ceb7125697473d3f93a4cf1927e3294d')
+md5sums=('1d2e31c859e9bfec055cf17e43583e6e')
 
 build() {
   cd $pkgname-$pkgver
