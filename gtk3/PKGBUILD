@@ -4,7 +4,7 @@
 
 pkgbase=gtk3
 pkgname=(gtk3 gtk-update-icon-cache)
-pkgver=3.19.9
+pkgver=3.19.12
 pkgrel=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 arch=(i686 x86_64)
@@ -16,7 +16,7 @@ makedepends=(gobject-introspection libcanberra)
 license=(LGPL)
 source=("https://download.gnome.org/sources/gtk+/${pkgver:0:4}/gtk+-$pkgver.tar.xz"
         "settings.ini")
-md5sums=('0f0b388b6d288566307a3b7385f15ab6'
+md5sums=('acdfb660f3d255a7ad35f51a6bc921e7'
          'ed43a8d7b5c99796134e2db56eb61805')
 
 prepare() {
