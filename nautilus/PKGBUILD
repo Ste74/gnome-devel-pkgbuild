@@ -3,7 +3,7 @@
 
 pkgbase=nautilus
 pkgname=(nautilus libnautilus-extension)
-pkgver=3.19.2
+pkgver=3.19.93
 pkgrel=1
 pkgdesc="GNOME file manager"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ makedepends=(intltool gobject-introspection python packagekit)
 url="http://www.gnome.org"
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-md5sums=('9b2c7554af3f17315d532f420cc9f61f')
+md5sums=('c2438c2b87ed31dab9a24d7a579b7106')
 
 build() {
   cd $pkgbase-$pkgver
