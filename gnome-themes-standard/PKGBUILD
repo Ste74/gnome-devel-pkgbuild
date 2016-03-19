@@ -2,8 +2,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-themes-standard
-pkgver=3.18.0
-pkgrel=1
+pkgver=3.19.91
+pkgrel=3
 pkgdesc="Default themes for the GNOME desktop"
 arch=(i686 x86_64)
 url="http://www.gnome.org"
@@ -16,7 +16,7 @@ replaces=(gnome-themes)
 conflicts=(gnome-themes)
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('e646eb04c225282b7df7fff65741adaad4cf9ed2c12616b7310e7edd27d2bacb')
+sha256sums=('46e024e160efdd32595db445517db8d0f8caae6c4941852e253b320200994300')
 
 build() {
   cd $pkgname-$pkgver
