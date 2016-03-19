@@ -2,8 +2,8 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=sushi
-pkgver=3.18.0
-pkgrel=2
+pkgver=3.19.90
+pkgrel=1
 pkgdesc="A quick previewer for Nautilus"
 arch=(i686 x86_64)
 url="http://www.gnome.org"
@@ -13,14 +13,11 @@ depends=('clutter-gtk' 'clutter-gst' 'gjs' 'libmusicbrainz5' 'webkit2gtk' 'gtkso
 optdepends=('unoconv: OpenDocument formats')
 install=sushi.install
 makedepends=('intltool' 'gobject-introspection')
-source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
-        clutter-gst3.patch)
-sha256sums=('7f4df92be950bf23aff28da49ce108766dd21a88efc14a9d0807e10225608e9c'
-            '7217c05f4cf4d797e8e042392c1cb92481bb616a1e7ce20393228591a6bc91e0')
+source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('040aeec75397c1920ba7982395d5f3f8c732e17778c47df2b97f1c4ad06ceb69')
 
 prepare() {
   cd "$pkgname-$pkgver"
-  patch -Np1 -i ../clutter-gst3.patch
 }
 
 build() {
