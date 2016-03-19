@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-control-center
-pkgver=3.19.90
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="The Control Center for GNOME"
 license=(GPL)
@@ -24,7 +24,7 @@ url="http://www.gnome.org"
 install=gnome-control-center.install
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('0efe353a8ff4abbbc989c51ceb1fa70e')
+md5sums=('fc7e870e773f17dba1e171159c3dd82b')
 
 prepare() {
   cd $pkgname-$pkgver
