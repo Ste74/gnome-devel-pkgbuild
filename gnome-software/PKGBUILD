@@ -4,7 +4,7 @@
 # Contributor: Yosef Or Boczko <yoseforb@gnome.org>
 
 pkgname=gnome-software
-pkgver=3.18.3
+pkgver=3.19.92
 pkgrel=1
 pkgdesc="GNOME Software Tools"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ depends=(gtk3 appstream-glib libsoup gsettings-desktop-schemas gnome-desktop pac
 makedepends=(intltool)
 install=gnome-software.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('cc76a51f56d114018f64478437aebef068799802884543c59e2473066c959b7b')
+sha256sums=('8f81a3f20c18fc70cd26dfd899c5a71ad4e81308ed41e64afd3c7d53bd0eff7c')
 
 build() {
   cd $pkgname-$pkgver
