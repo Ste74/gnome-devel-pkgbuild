@@ -1,14 +1,14 @@
-# $Id: PKGBUILD 250181 2015-11-06 23:07:13Z heftig $
+# $Id: PKGBUILD 264762 2016-04-12 21:41:57Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-robots
-pkgver=3.19.90
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="Avoid the robots and make them crash into each other"
 arch=('i686' 'x86_64')
 license=('GPL')
-depends=('hicolor-icon-theme' 'gtk3' 'libcanberra' 'librsvg')
+depends=('hicolor-icon-theme' 'gtk3' 'libcanberra' 'librsvg' 'libgames-support')
 makedepends=('intltool' 'itstool' 'gobject-introspection')
 conflicts=('gnome-games')
 replaces=('gnome-games')
@@ -16,8 +16,8 @@ options=('!emptydirs')
 install=gnome-robots.install
 url="https://live.gnome.org/Robots"
 groups=('gnome-extra')
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('0a58b4174323935ab12ce5d83cfb9fbe')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('df8682cc99c7aaac41c9e8f5cd57168c80ebf57ca57e4b749f16b4fed9710f05')
 
 build() {
   cd $pkgname-$pkgver

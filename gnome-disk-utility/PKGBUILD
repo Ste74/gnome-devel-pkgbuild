@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 251991 2015-11-27 10:11:25Z heftig $
+# $Id: PKGBUILD 264758 2016-04-12 21:38:30Z heftig $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Silvio Knizek (killermoehre)
 
 pkgname=gnome-disk-utility
-pkgver=3.19.3
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="Disk Management Utility for GNOME"
 arch=(i686 x86_64)
@@ -15,11 +15,12 @@ makedepends=(intltool docbook-xsl gnome-settings-daemon)
 options=('!emptydirs')
 install=gnome-disk-utility.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('e96ebf6fa156ad7bb0436a9c492ac05d')
+sha256sums=('6877a5b6ea949c9527aac7a1ac38c02b4dd5f8230dc59be5a8f48a0ee381f1cd')
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --sysconfdir=/etc --disable-static
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

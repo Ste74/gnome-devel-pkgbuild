@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 249581 2015-10-20 20:14:37Z heftig $
+# $Id: PKGBUILD 264348 2016-04-09 13:18:43Z foutrelis $
 # Maintainer : Ionut Biru <ibiru@archlinux.org>
 # Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
 # Contributor: Adam Hani Schakaki (krzd) <krzd@krzd.net>
 
 pkgname=gsettings-desktop-schemas
-pkgver=3.19.92
+pkgver=3.20.0
 pkgrel=1
 pkgdesc="Shared GSettings schemas for the desktop"
 arch=(any)
@@ -13,8 +13,8 @@ license=(GPL)
 depends=(glib2)
 makedepends=(intltool gobject-introspection)
 install=$pkgname.install
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('b8ba9a2ff1e616261440f43243a3d167')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('55a41b533c0ab955e0a36a84d73829451c88b027d8d719955d8f695c35c6d9c1')
 
 build() {
   cd $pkgname-$pkgver

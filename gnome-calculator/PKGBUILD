@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 250516 2015-11-09 23:10:29Z heftig $
+# $Id: PKGBUILD 264302 2016-04-09 13:17:10Z foutrelis $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-calculator
-pkgver=3.19.90
+pkgver=3.20.0
 pkgrel=1
 pkgdesc="GNOME Scientific calculator"
 arch=('i686' 'x86_64')
@@ -16,13 +16,14 @@ conflicts=('gcalctool')
 options=(!emptydirs)
 url="http://www.gnome.org"
 install=gnome-calculator.install
-source=(http://ftp.gnome.org/pub/gnome/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-md5sums=('bec34b122bfd5567687ba6b3d615c866')
+source=(https://download.gnome.org/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
+sha256sums=('504da356f4ab9d2a6ec989e2769ccf00afdbfb5aa8bd57e60c1e8f21652e0c92')
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --sysconfdir=/etc --disable-schemas-compile \
       --localstatedir=/var --libexecdir=/usr/lib/gnome-calculator
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 248515 2015-10-08 19:48:29Z heftig $
+# $Id: PKGBUILD 264764 2016-04-12 21:42:47Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=libgames-support
-pkgver=0.91
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="Code shared between GNOME games"
 url="https://git.gnome.org/browse/libgames-support/"
@@ -10,12 +10,13 @@ license=(LGPL)
 arch=(i686 x86_64)
 depends=(gtk3 libgee)
 makedepends=(gobject-introspection vala intltool)
-source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('c6743e57bd6dd6b78b3273b92519eb26')
+source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:3}/$pkgname-$pkgver.tar.xz)
+sha256sums=('976c8a87a09c90c73dbbd6d72b4136b747c098e665060feb6ba40e53c8221091')
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --disable-static
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

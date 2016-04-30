@@ -1,23 +1,23 @@
-# $Id: PKGBUILD 250513 2015-11-09 23:07:59Z heftig $
+# $Id: PKGBUILD 264392 2016-04-09 13:20:15Z foutrelis $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=swell-foop
-pkgver=3.19.91
+pkgver=3.20.0
 pkgrel=1
 pkgdesc="Clear the screen by removing groups of colored and shaped tiles"
 arch=('i686' 'x86_64')
 license=('GPL')
 depends=('hicolor-icon-theme' 'clutter-gtk' 'librsvg')
-makedepends=('intltool' 'itstool' 'gobject-introspection' 'python2')
+makedepends=('intltool' 'itstool' 'gobject-introspection')
 conflicts=('gnome-games')
 replaces=('gnome-games')
 options=('!emptydirs')
 install=swell-foop.install
-url="https://live.gnome.org/Swell%20Foop"
+url="https://wiki.gnome.org/Apps/Swell%20Foop"
 groups=('gnome-extra')
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('a99fd2e25a931126dd30f9c7a17ce780')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('40532a734dcae6d42a1e4692fd94e395442ff07c134acacf5fce3396c1e352a4')
 
 build() {
   cd $pkgname-$pkgver

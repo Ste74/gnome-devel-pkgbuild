@@ -1,14 +1,14 @@
-# $Id: PKGBUILD 250180 2015-11-06 23:07:00Z heftig $
+# $Id: PKGBUILD 264760 2016-04-12 21:40:29Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-klotski
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="Slide blocks to solve the puzzle"
 arch=('i686' 'x86_64')
 license=('GPL')
-depends=('hicolor-icon-theme' 'gtk3' 'librsvg')
+depends=('hicolor-icon-theme' 'gtk3' 'librsvg' 'libgames-support')
 makedepends=('intltool' 'itstool' 'gobject-introspection')
 conflicts=('gnome-games')
 replaces=('gnome-games')
@@ -16,8 +16,8 @@ options=('!emptydirs')
 install=gnome-klotski.install
 url="https://live.gnome.org/Klotski"
 groups=('gnome-extra')
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('0f1f17e72c8879b2b646844fcf7819bd')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('920bd02fe066b5740f1e4bb58d7ad2fd7065d5207881fdfa58e4c034b5d96084')
 
 build() {
   cd $pkgname-$pkgver

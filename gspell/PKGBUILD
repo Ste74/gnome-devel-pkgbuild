@@ -1,24 +1,24 @@
-# Maintainer: Bernd Prünster <aur@berndpruenster.org>
+# $Id: PKGBUILD 264771 2016-04-12 21:46:30Z heftig $
+# Maintainer: Jan de Groot <jgc@archlinux.org>
 pkgname=gspell
-pkgver=0.2.6
+pkgver=1.0.1
 pkgrel=1
-pkgdesc=" a flexible API to implement the spell checking in a GTK+ application"
+pkgdesc="a flexible API to implement the spell checking in a GTK+ application"
 arch=('i686' 'x86_64')
 url="https://wiki.gnome.org/Projects/gspell"
 license=('GPL2')
-depends=('gtk3' 'gtksourceview3' 'enchant' 'libxml2' 'iso-codes')
-makedepends=('intltool' 'itstool')
-source=("https://download.gnome.org/sources/gspell/${pkgver%.*}/gspell-${pkgver}.tar.xz")
-md5sums=('525f2450cdcded8cb1bfa7a61187b99a')
+depends=('gtk3' 'enchant' 'libxml2' 'iso-codes')
+makedepends=('intltool' 'gobject-introspection' 'vala')
+source=("https://download.gnome.org/sources/gspell/${pkgver:0:3}/gspell-${pkgver}.tar.xz")
+sha256sums=('22cd0545351801a83c0da8da5baa6755b9032654c1bea95e116458066f7bc71b')
 
 build() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-  # currently not needed, but might be again in the future
-  # export ac_cv_path_VALAC=""
+  cd "$pkgname-$pkgver"
   ./configure  --prefix=/usr
-  make  || return 1
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
 }
 package(){
-  cd ${srcdir}/${pkgname}-${pkgver}
-  make DESTDIR="${pkgdir}/" install
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
 }

@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 250804 2015-11-12 10:51:02Z heftig $
+# $Id: PKGBUILD 264971 2016-04-14 21:08:51Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-taquin
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="Move tiles so that they reach their places"
 url="https://wiki.gnome.org/Apps/Taquin"
@@ -14,8 +14,8 @@ makedepends=(intltool vala itstool)
 groups=(gnome-extra)
 install=gnome-taquin.install
 options=(!emptydirs)
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('d2311223a7662ab84c627a08a3b60ac9')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('fdee2e3c0624e52b0f57e9e277e9be533f570f8294afffe5fdab221b018db3a3')
 
 build() {
   cd $pkgname-$pkgver

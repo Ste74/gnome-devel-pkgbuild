@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 249190 2015-10-13 08:33:45Z heftig $
+# $Id: PKGBUILD 264266 2016-04-09 13:16:05Z foutrelis $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: William Rea <sillywilly@gmail.com>
 
 pkgname=clutter
-pkgver=1.25.4
+pkgver=1.26.0
 pkgrel=1
 pkgdesc="A GObject based library for creating fast, visually rich graphical user interfaces"
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ license=('LGPL')
 depends=('gtk3' 'cogl' 'libinput')
 makedepends=('gobject-introspection' 'gtk-doc')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('bc56feb4f949ad0da2ca8e061027e140')
+sha256sums=('67514e7824b3feb4723164084b36d6ce1ae41cb3a9897e9f1a56c8334993ce06')
 
 build() {
   cd "$pkgname-$pkgver"

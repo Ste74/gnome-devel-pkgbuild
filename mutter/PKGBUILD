@@ -1,28 +1,24 @@
-# $Id: PKGBUILD 250820 2015-11-12 21:02:27Z heftig $
+# $Id: PKGBUILD 264851 2016-04-13 20:57:48Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Michael Kanis <mkanis_at_gmx_dot_de>
 
 pkgname=mutter
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="A window manager for GNOME"
 arch=(i686 x86_64)
 license=('GPL')
 depends=('clutter' 'dconf' 'gobject-introspection-runtime' 'gsettings-desktop-schemas' 'libcanberra' 'startup-notification' 'zenity' 'libsm' 'gnome-desktop' 'upower' 'libxkbcommon-x11' 'gnome-settings-daemon' 'libgudev')
-makedepends=('intltool' 'libxkbcommon-x11' 'gobject-introspection')
+makedepends=('intltool' 'libxkbcommon-x11' 'gobject-introspection' 'python2')
 conflicts=('mutter-wayland')
 replaces=('mutter-wayland')
 url="http://www.gnome.org"
 groups=('gnome')
 options=('!emptydirs')
 install=mutter.install
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('c1ce98fd4321af528cb003648b7a74d4')
-
-prepare() {
-  cd "$pkgname-$pkgver"
-}
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('6a4903b9e2b0699c95195c36d1f31a789571c63f2ee3cfe2475e2955e7dca21c')
 
 build() {
   cd "$pkgname-$pkgver"

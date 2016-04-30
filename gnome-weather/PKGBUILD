@@ -1,19 +1,19 @@
-# $Id: PKGBUILD 248953 2015-10-12 17:47:04Z heftig $
+# $Id: PKGBUILD 264343 2016-04-09 13:18:32Z foutrelis $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-weather
-pkgver=3.19.92
+pkgver=3.20.0
 pkgrel=1
 pkgdesc="Access current weather conditions and forecasts"
 arch=(any)
 url="https://www.gnome.org/"
 license=(GPL)
-depends=(gtk3 gjs libgweather)
+depends=(gtk3 gjs libgweather geoclue2)
 makedepends=(intltool gobject-introspection)
 groups=(gnome-extra)
 install=gnome-weather.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-md5sums=('bbc4a2e7e32d373305cf23e95d4e1055')
+sha256sums=('3d56c59715656c9031b42f4803ee22776a954cd0587f465590ea0f43cec5b46a')
 
 build() {
   cd $pkgname-$pkgver

@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 255183 2015-12-10 04:47:02Z foutrelis $
+# $Id: PKGBUILD 264975 2016-04-14 21:47:58Z heftig $
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=gtkmm3
 _pkgbasename=gtkmm
 pkgname=('gtkmm3' 'gtkmm3-docs')
-pkgver=3.19.6
+pkgver=3.20.1
 pkgrel=1
 arch=('i686' 'x86_64')
 makedepends=('gtk3' 'pangomm' 'atkmm' 'glibmm-docs' 'mm-common' 'doxygen' 'libxslt')
@@ -12,11 +12,12 @@ license=('LGPL')
 options=('!emptydirs')
 url="http://www.gtkmm.org/"
 source=(http://ftp.gnome.org/pub/GNOME/sources/$_pkgbasename/${pkgver:0:4}/$_pkgbasename-$pkgver.tar.xz)
-md5sums=('1b62b0148a0bb0255050797c63aae974')
+sha256sums=('051de1b8756ca6ec61f26264338cfc3060af936fd70bf4558bfe1e115418c612')
 
 build() {
   cd "$_pkgbasename-$pkgver"
   ./configure --prefix=/usr
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

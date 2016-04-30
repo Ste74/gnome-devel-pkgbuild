@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 250515 2015-11-09 23:09:38Z heftig $
+# $Id: PKGBUILD 264664 2016-04-11 15:24:27Z heftig $
 # Maintainer:  Jan de Groot <jan@archlinux.org>
 
 pkgname=gnome-desktop
-pkgver=3.19.93
+pkgver=3.20.1
 pkgrel=1
 epoch=1
 pkgdesc="Library with common API for various GNOME modules"
@@ -12,14 +12,15 @@ depends=(gsettings-desktop-schemas gtk3 libxkbfile xkeyboard-config iso-codes)
 makedepends=(intltool gobject-introspection itstool)
 url="http://www.gnome.org"
 groups=(gnome)
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('0aeea500217494fd343debe762d550d9')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('6eac7b2b1a9672685028b81d2b06cb45449f967e66dd41724bc4a9596941c140')
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
     --libexecdir=/usr/lib/$pkgname --disable-static \
     --with-gnome-distributor="Arch Linux"
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

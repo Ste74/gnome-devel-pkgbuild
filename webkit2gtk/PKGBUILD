@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 255702 2015-12-10 05:12:43Z foutrelis $
+# $Id: PKGBUILD 266676 2016-04-30 13:04:05Z heftig $
 # Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=webkit2gtk
-pkgver=2.11.90
+pkgver=2.12.2
 pkgrel=1
 pkgdesc="GTK+ Web content engine library"
 arch=('i686' 'x86_64')
@@ -10,14 +10,14 @@ url="http://webkitgtk.org/"
 license=('custom')
 depends=('libxt' 'libxslt' 'enchant' 'geoclue2' 'gst-plugins-base-libs'
 	 'libsecret' 'libwebp' 'harfbuzz-icu' 'gtk3' 'libnotify' 'hyphen')
-makedepends=('gtk2' 'gperf' 'gobject-introspection' 'ruby' 'gtk-doc' 'cmake' 'python' 'llvm')
+makedepends=('gtk2' 'gperf' 'gobject-introspection' 'ruby' 'gtk-doc' 'cmake' 'python')
 optdepends=('gtk2: Netscape plugin support'
             'gst-plugins-base: free media decoding'
             'gst-plugins-good: media decoding'
             'gst-libav: nonfree media decoding')
 options=('!emptydirs')
 source=(http://webkitgtk.org/releases/webkitgtk-${pkgver}.tar.xz)
-md5sums=('1edba6fe83c097d633a405965b503986')
+sha256sums=('9dc49b908b1c37da739703e1402a7f07c4ea9093b8ecfb34f20e8f74e328f124')
 
 prepare() {
   mkdir build
@@ -31,6 +31,7 @@ prepare() {
 build() {
   cd build
   cmake -DPORT=GTK -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_SKIP_RPATH=ON -DCMAKE_INSTALL_PREFIX=/usr \
         -DLIB_INSTALL_DIR=/usr/lib -DLIBEXEC_INSTALL_DIR=/usr/lib/webkit2gtk-4.0 \
         -DENABLE_GTKDOC=ON ../webkitgtk-$pkgver
   make

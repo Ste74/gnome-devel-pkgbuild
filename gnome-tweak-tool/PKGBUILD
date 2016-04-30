@@ -1,19 +1,19 @@
-# $Id: PKGBUILD 250762 2015-11-11 19:12:01Z heftig $
+# $Id: PKGBUILD 266316 2016-04-27 19:01:32Z heftig $
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gnome-tweak-tool
-pkgver=3.19.90
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="A tool to customize advanced GNOME 3 options."
 arch=(any)
 url="https://live.gnome.org/GnomeTweakTool"
 license=('GPL')
-depends=('gnome-settings-daemon' 'python2-gobject' 'hicolor-icon-theme')
+depends=('gnome-settings-daemon' 'python2-gobject')
 makedepends=('intltool')
 groups=('gnome-extra')
 install=gnome-tweak-tool.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('2296a2fbd513a9efd7967389612abf7c')
+sha256sums=('5171b2f75ceeea9455543e999a83a71e8566947f89eb9157aaff7969b7e446ba')
 
 build() {
   cd "$pkgname-$pkgver"

@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 255811 2015-12-11 23:22:22Z heftig $
+# $Id: PKGBUILD 264769 2016-04-12 21:45:43Z heftig $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=epiphany
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 install=epiphany.install
 pkgdesc="A GNOME web browser based on the WebKit rendering engine."
@@ -14,7 +14,7 @@ options=('!emptydirs')
 groups=('gnome')
 url="https://wiki.gnome.org/Apps/Web"
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('44c7247c9128afcc416c525293dbc009')
+sha256sums=('7171f67d5edde0e82b8bad4761638622aa969d6ffcea896cd94bbe509af9c9e7')
 
 build() {
   cd $pkgname-$pkgver

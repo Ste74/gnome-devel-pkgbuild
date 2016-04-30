@@ -1,29 +1,28 @@
-# $Id: PKGBUILD 250228 2015-11-09 09:17:26Z jgc $
+# $Id: PKGBUILD 266671 2016-04-29 23:28:39Z heftig $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=evolution-data-server
-pkgver=3.19.92
-pkgrel=1
+pkgver=3.20.1
+pkgrel=2
 pkgdesc="Centralized access to appointments and contacts"
 arch=(i686 x86_64)
-depends=(gnome-online-accounts nss krb5 libgweather libical db libgdata)
-makedepends=(intltool gperf gobject-introspection vala gtk-doc)
+depends=(gnome-online-accounts nss krb5 libgweather libical db libgdata libphonenumber webkitgtk)
+makedepends=(intltool gperf gobject-introspection vala gtk-doc boost)
 install=$pkgname.install
 url="https://wiki.gnome.org/Apps/Evolution"
 license=(GPL)
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('1732dfcbb4fbced474147ff6f41397de')
+sha256sums=('1dfbf6b45656c202f3d68212afb11710e40188db84748d3e487a89ccd4874b53')
 
 build() {
   cd "$pkgname-$pkgver"
   ./configure --prefix=/usr --sysconfdir=/etc \
       --localstatedir=/var --with-openldap=yes \
       --libexecdir=/usr/lib/evolution-data-server \
-      --with-krb5=/usr --with-libdb=/usr \
+      --with-krb5=/usr --with-libdb=/usr --with-phonenumber=/usr \
       --enable-vala-bindings --disable-uoa \
       --enable-gtk-doc
-
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' -e 's/    if test "$export_dynamic" = yes && test -n "$export_dynamic_flag_spec"; then/      func_append compile_command " -Wl,-O1,--as-needed"\n      func_append finalize_command " -Wl,-O1,--as-needed"\n\0/' libtool
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

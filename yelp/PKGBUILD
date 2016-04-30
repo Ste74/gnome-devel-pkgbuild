@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 249142 2015-10-13 07:58:20Z heftig $
+# $Id: PKGBUILD 264805 2016-04-12 22:30:00Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=yelp
-pkgver=3.19.90
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="A help browser for GNOME"
 arch=('i686' 'x86_64')
@@ -15,13 +15,14 @@ license=('GPL')
 options=('!emptydirs')
 url="http://www.gnome.org"
 install=yelp.install
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('ec7305242cf256aaf6e1c83f32709239')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('dda0b051ad32908cb9d894d1db3ffdac69b21849b8a6a9a74d9669b017f608c2')
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --sysconfdir=/etc \
       --localstatedir=/var --disable-static
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

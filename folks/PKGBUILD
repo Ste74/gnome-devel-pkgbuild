@@ -13,7 +13,7 @@ makedepends=(gobject-introspection intltool vala)
 install=folks.install
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-${pkgver}.tar.xz)
-md5sums=('ad732c17d7c29071871533abb9781528')
+sha256sums=('35a80a40e0cf68d5e86eff2ad55320f17427f66377c453ba5a1dbbd71755a1b8')
 
 build() {
   cd $pkgname-$pkgver

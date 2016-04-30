@@ -1,4 +1,4 @@
-# $Id: PKGBUILD 257274 2015-12-26 01:34:20Z heftig $
+# $Id: PKGBUILD 266635 2016-04-29 14:28:35Z heftig $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Arjan Timmerman <arjan@archlinux.org>
@@ -8,7 +8,7 @@
 
 pkgbase=network-manager-applet
 pkgname=(nm-connection-editor network-manager-applet)
-pkgver=1.1.90
+pkgver=1.2.0
 pkgrel=1
 pkgdesc="Applet for managing network connections"
 arch=(i686 x86_64)
@@ -18,7 +18,7 @@ makedepends=(libnm-glib libsecret gtk3 mobile-broadband-provider-info iso-codes
              libnotify libmm-glib intltool gobject-introspection libgudev)
 options=('!emptydirs')
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgbase/${pkgver::3}/$pkgbase-$pkgver.tar.xz)
-md5sums=('c990580ec39f314409eb41c2a084e26b')
+sha256sums=('934f244fbad1753cca06f456033547023a6f6c3364cf4b97b1b219bfdb981b36')
 
 prepare() {
   mkdir -p nma/etc/xdg nma/usr/bin \

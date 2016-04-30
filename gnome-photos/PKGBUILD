@@ -1,19 +1,20 @@
-# $Id: PKGBUILD 250222 2015-11-09 08:40:45Z jgc $
+# $Id: PKGBUILD 264850 2016-04-13 20:56:03Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-photos
-pkgver=3.18.2
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="Access, organize, and share your photos on GNOME"
 arch=(i686 x86_64)
 url="https://www.gnome.org/"
 license=(GPL)
-depends=(exempi gtk3 libexif librsvg babl gegl gnome-desktop gnome-online-accounts lcms2 tracker grilo gfbgraph libgdata gnome-online-miners dleyna-server dleyna-renderer)
-makedepends=(intltool itstool)
+depends=(exempi gtk3 libexif librsvg babl gegl gnome-desktop gnome-online-accounts lcms2 tracker
+         grilo gfbgraph libgdata gnome-online-miners dleyna-server dleyna-renderer libgexiv2 libraw)
+makedepends=(intltool itstool python)
 groups=(gnome-extra)
 install=gnome-photos.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-sha256sums=('7f6169c663b7a0e1b971d5af4def3d9a633e16a24e7d2c593b51be0053f9a0d8')
+sha256sums=('7639cc9367aa0f4bbf54aa46edaeedb91fcce85d387e8ffb669470710e247e5a')
 
 build() {
   cd $pkgname-$pkgver

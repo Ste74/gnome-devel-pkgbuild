@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 261000 2016-03-06 07:21:16Z jgc $
+# $Id: PKGBUILD 264257 2016-04-09 13:15:52Z foutrelis $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=appstream-glib
-pkgver=0.5.11
+pkgver=0.5.12
 pkgrel=1
 pkgdesc="Provides GObjects and helper methods to make it easy to read and write AppStream metadata"
 arch=('i686' 'x86_64')
@@ -14,7 +14,7 @@ provides=('appdata-tools')
 conflicts=('appdata-tools')
 replaces=('appdata-tools')
 source=(http://people.freedesktop.org/~hughsient/appstream-glib/releases/$pkgname-$pkgver.tar.xz)
-md5sums=('01daa1454961407c7e5205895634d8d6')
+md5sums=('aea1cf59acbb86ee93589fde5172e22f')
 
 build() {
   cd $pkgname-$pkgver

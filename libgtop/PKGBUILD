@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 248636 2015-10-08 19:52:48Z heftig $
+# $Id: PKGBUILD 264372 2016-04-09 13:19:34Z foutrelis $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=libgtop
-pkgver=2.33.4
+pkgver=2.34.0
 pkgrel=1
 pkgdesc="A library that reads information about processes and the running system"
 arch=('i686' 'x86_64')
@@ -10,9 +10,9 @@ license=('LGPL')
 depends=('glib2' 'libxau' 'texinfo')
 makedepends=('intltool' 'gobject-introspection')
 install=libgtop.install
-source=(http://ftp.gnome.org/pub/gnome/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
+source=(https://download.gnome.org/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
 url="http://www.gnome.org/"
-md5sums=('5ef8a703d46a7519bbb6ef0dba07b840')
+sha256sums=('8d8ae39e700d1c8c0b3e1391ed10ca88e6fc14f49d175d516dab6e3313b4ee2a')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"

@@ -1,32 +1,33 @@
-# $Id: PKGBUILD 255155 2015-12-10 04:45:59Z foutrelis $
+# $Id: PKGBUILD 266461 2016-04-28 13:48:54Z jgc $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-builder
-pkgver=3.19.90
+pkgver=3.20.2
 pkgrel=1
 pkgdesc="An IDE for writing GNOME-based software"
 url="https://wiki.gnome.org/Apps/Builder"
 arch=(i686 x86_64)
 license=(GPL3)
 depends=(gtksourceview3 devhelp libgit2-glib gjs python-gobject clang desktop-file-utils
-         ctags libpeas vte3 vala python-jedi xdg-app)
+         ctags libpeas vte3 vala python-jedi)
 makedepends=(intltool llvm gobject-introspection gtk-doc)
 groups=(gnome-extra)
-install=gnome-builder.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('4e5826472d1b4a040505f01a42c97fd9')
+sha256sums=('027d4dbcb05d7617c7d79356fbb710d87918fac86b15254895e62ff7a14b0233')
+
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-    --libexecdir=/usr/lib
+    --libexecdir=/usr/lib --enable-gtk-doc
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
-#check() {
-#  cd $pkgname-$pkgver
-#  make -k check || :
-#}
+check() {
+  cd $pkgname-$pkgver
+  make -k check || :
+}
 
 package() {
   cd $pkgname-$pkgver

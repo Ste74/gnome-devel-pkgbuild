@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 255131 2015-12-10 04:45:02Z foutrelis $
+# $Id: PKGBUILD 264277 2016-04-09 13:16:20Z foutrelis $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=evince
-pkgver=3.19.92
+pkgver=3.20.0
 pkgrel=1
 pkgdesc="Document viewer (PDF, Postscript, djvu, tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr,cbz,cb7 and cbt))"
 url="https://wiki.gnome.org/Apps/Evince"
@@ -15,8 +15,8 @@ optdepends=('texlive-bin: DVI support'
 groups=(gnome)
 install=evince.install
 options=('!emptydirs')
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('d744482d2a362cede7751c5c071a0d213c68a9cdcc6abc4b08b102cbeeac30ae')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('cf8358a453686c2a7f85d245f83fe918c0ce02eb6532339f3e02e31249a5a280')
 
 build() {
   cd $pkgname-$pkgver
@@ -26,8 +26,9 @@ build() {
       --enable-pdf            --enable-tiff \
       --enable-djvu           --enable-dvi \
       --enable-t1lib          --enable-comics \
-      --disable-scrollkeeper  --disable-schemas-compile \
+      --disable-schemas-compile \
       --enable-introspection --disable-browser-plugin
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

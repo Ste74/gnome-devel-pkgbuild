@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 250568 2015-11-10 19:50:20Z heftig $
+# $Id: PKGBUILD 264849 2016-04-13 20:55:16Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-control-center
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="The Control Center for GNOME"
 license=(GPL)
@@ -24,7 +24,7 @@ url="http://www.gnome.org"
 install=gnome-control-center.install
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('fc7e870e773f17dba1e171159c3dd82b')
+sha256sums=('ce6474fc60f78ed3cfaf555e55a52ec3ebb6437fa184e08ad6077bbec380a1ed')
 
 prepare() {
   cd $pkgname-$pkgver

@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 248570 2015-10-08 19:50:56Z heftig $
+# $Id: PKGBUILD 264306 2016-04-09 13:17:17Z foutrelis $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-clocks
-pkgver=3.19.2
+pkgver=3.20.0
 pkgrel=1
 pkgdesc="Clocks applications for GNOME"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ makedepends=(intltool vala gobject-introspection itstool)
 groups=(gnome-extra)
 install=gnome-clocks.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-md5sums=('c341eef0218222ee5667e4752a85fc1e')
+sha256sums=('e7a6da2ba3778fcfd77a6734f960319035370b942a3358089b7e712055e1bb17')
 
 build() {
   cd $pkgname-$pkgver

@@ -1,19 +1,19 @@
-# $Id: PKGBUILD 249451 2015-10-17 01:02:13Z heftig $
+# $Id: PKGBUILD 264970 2016-04-14 21:05:10Z heftig $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-calendar
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="Simple and beautiful calendar application designed to perfectly fit the GNOME desktop"
 arch=(i686 x86_64)
 url="http://gnome.org"
 license=('GPL')
 depends=('evolution-data-server' 'desktop-file-utils')
-makedepends=('intltool' 'python2')
+makedepends=('intltool' 'python')
 install=gnome-calendar.install
 groups=('gnome-extra')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('8ca17a7761d9d00d2d27f98e7133b94e')
+sha256sums=('5182c4d053848f76386bf7748944c34772f3d18b909e42a3226c36e7e49b097c')
 
 build() {
   cd $pkgname-$pkgver

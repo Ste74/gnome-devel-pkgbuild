@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 250486 2015-11-09 22:29:56Z heftig $
+# $Id: PKGBUILD 264802 2016-04-12 22:27:39Z heftig $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-maps
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="A simple GNOME 3 maps application"
 arch=(i686 x86_64)
@@ -12,12 +12,13 @@ depends=(geocode-glib geoclue2 gjs libchamplain gnome-themes-standard libgee fol
 makedepends=(intltool gobject-introspection)
 groups=('gnome-extra')
 install=gnome-maps.install
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('34117175072679dd637b06e77d27c316')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('4874d10a3cfdffd5d1db6084d67b5e8dc8c2db2ff995302b80060ecfc5e99bd5')
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr --disable-schemas-compile
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

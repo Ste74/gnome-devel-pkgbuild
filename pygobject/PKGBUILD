@@ -1,16 +1,16 @@
-# $Id: PKGBUILD 249747 2015-10-24 17:16:42Z heftig $
+# $Id: PKGBUILD 264386 2016-04-09 13:20:03Z foutrelis $
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgbase=pygobject
 pkgname=(python-gobject python2-gobject pygobject-devel)
-pkgver=3.19.92
+pkgver=3.20.0
 pkgrel=1
 arch=(i686 x86_64)
 url="https://live.gnome.org/PyGObject"
 license=(LGPL)
-makedepends=(python python2 python-cairo python2-cairo gobject-introspection gnome-common)
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-md5sums=('11d9baa5060b572e471ee4bb5d85a0c3')
+makedepends=(python python2 python-cairo python2-cairo gobject-introspection)
+source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
+sha256sums=('31ab4701f40490082aa98af537ccddba889577abe66d242582f28577e8807f46')
 
 prepare() {
   mkdir build-py2 build-py3 devel
@@ -20,10 +20,12 @@ prepare() {
 build() {
   cd build-py2
   ../${pkgbase}-${pkgver}/configure --prefix=/usr --with-python=/usr/bin/python2
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 
   cd ../build-py3
   ../${pkgbase}-${pkgver}/configure --prefix=/usr --with-python=/usr/bin/python
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

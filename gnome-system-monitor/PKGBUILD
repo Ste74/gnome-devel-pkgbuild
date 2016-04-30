@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 255158 2015-12-10 04:46:06Z foutrelis $
+# $Id: PKGBUILD 264807 2016-04-12 22:32:08Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-system-monitor
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="A system monitor for GNOME"
 arch=(i686 x86_64)
@@ -14,8 +14,8 @@ options=(!emptydirs)
 url="http://www.gnome.org"
 groups=('gnome')
 install=gnome-system-monitor.install
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('fc87dc26c34e4c540d7373ed103776ba')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('9b23ab443fd92050b95c03a0ab321bbd41696a0ffc89c06e79c8798dca0a44f9')
 
 build() {
   cd $pkgname-$pkgver

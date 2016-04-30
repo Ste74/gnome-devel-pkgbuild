@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 249316 2015-10-14 04:36:15Z heftig $
+# $Id: PKGBUILD 264384 2016-04-09 13:20:00Z foutrelis $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=polari
-pkgver=3.19.92
+pkgver=3.20.0
 pkgrel=1
 pkgdesc="An IRC Client for GNOME"
 arch=(i686 x86_64)
@@ -12,12 +12,13 @@ depends=(gjs gtk3 telepathy-glib telepathy-idle telepathy-mission-control telepa
 makedepends=(intltool gobject-introspection desktop-file-utils appdata-tools)
 groups=(gnome-extra)
 install=polari.install
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('e9c6afaab0dbeb24019a2087ff6ac98c')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('519402e5a7e7aa684d364523bf16357be748c4d0a08b1297e2dee379b8da440a')
 
 build() {
   cd $pkgname-$pkgver
   ./configure --prefix=/usr
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 

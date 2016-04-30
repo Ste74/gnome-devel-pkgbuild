@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 251137 2015-11-17 20:06:05Z heftig $
+# $Id: PKGBUILD 265761 2016-04-20 17:15:04Z heftig $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgbase=gdm
 pkgname=(gdm libgdm)
-pkgver=3.19.92
+pkgver=3.20.1
 pkgrel=1
 pkgdesc="Gnome Display Manager"
 arch=(i686 x86_64)
@@ -13,10 +13,10 @@ url="http://www.gnome.org"
 depends=(gnome-shell gnome-session upower xorg-xrdb xorg-server xorg-server-xwayland xorg-xhost)
 makedepends=(itstool intltool yelp-tools gobject-introspection)
 checkdepends=('check')
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz
+source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz
         0002-Xsession-Don-t-start-ssh-agent-by-default.patch)
-md5sums=('8303b8d25bb4434d0ea7b6ff0af1e8f4'
-         'dd266915caaab86c34d1f681a8ace8f6')
+sha256sums=('10a2512fc8455a3e60e61907a8419ae7dfba9e7ea80cfb7e2ffa746eb165789f'
+            '9449da0b6ee58aa3fde65e6d8d1f30513e4176a7dc6d176f17f320ce82cb1d82')
 
 prepare() {
   cd $pkgbase-$pkgver
@@ -40,12 +40,9 @@ build() {
     --enable-ipv6 \
     --with-at-spi-registryd-directory=/usr/lib/at-spi2-core \
     --with-check-accelerated-directory=/usr/lib/gnome-session \
-    --with-authentication-agent-directory=/usr/lib/polkit-gnome \
     --with-gnome-settings-daemon-directory=/usr/lib/gnome-settings-daemon \
     --without-tcp-wrappers \
-    --without-console-kit \
     --without-plymouth \
-    --with-systemd \
     --with-default-pam-config=arch
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' -e 's/    if test "$export_dynamic" = yes && test -n "$export_dynamic_flag_spec"; then/      func_append compile_command " -Wl,-O1,--as-needed"\n      func_append finalize_command " -Wl,-O1,--as-needed"\n\0/' libtool

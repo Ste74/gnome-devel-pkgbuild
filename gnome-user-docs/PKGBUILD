@@ -1,0 +1,27 @@
+# $Id: PKGBUILD 264799 2016-04-12 22:22:41Z heftig $
+# Maintainer: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=gnome-user-docs
+pkgver=3.20.1
+pkgrel=1
+pkgdesc="User documentation for GNOME"
+arch=(any)
+license=('FDL')
+depends=('yelp')
+makedepends=('yelp-tools')
+url="http://www.gnome.org"
+groups=('gnome')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('89dca8f695a2880461ad1d60a6fc77a7bcefb0cd3fc5eaa6a1df84ff3e5ec0cd')
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc \
+      --localstatedir=/var
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}

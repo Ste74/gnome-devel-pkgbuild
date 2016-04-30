@@ -1,23 +1,27 @@
-# $Id: PKGBUILD 251965 2015-11-25 22:49:41Z heftig $
+# $Id: PKGBUILD 264395 2016-04-09 13:20:22Z foutrelis $
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Alexander Fehr <pizzapunk gmail com>
 
 pkgbase=tracker
 pkgname=(tracker libtracker-sparql)
-pkgver=1.7.2
-pkgrel=1
+pkgver=1.8.0
+pkgrel=2
 pkgdesc="All-in-one indexer, search tool and metadata database"
 arch=(i686 x86_64)
 license=(GPL)
 makedepends=(libgee libsecret upower libexif exempi poppler-glib libgsf icu enca networkmanager
              gtk3 desktop-file-utils hicolor-icon-theme gobject-introspection intltool giflib
              gst-plugins-base-libs totem-plparser taglib libvorbis flac vala libgxps
-             libnautilus-extension libmediaart libxslt libiptcdata libosinfo libcue)
+             libnautilus-extension libmediaart libxslt libiptcdata libosinfo libcue libstemmer)
 url="http://www.gnome.org"
 options=('!emptydirs')
-source=(http://ftp.gnome.org/pub/gnome/sources/$pkgbase/${pkgver:0:3}/$pkgbase-$pkgver.tar.xz)
-md5sums=('6da5ae99723913e0bcffad61fa5c7552')
+source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:3}/$pkgbase-$pkgver.tar.xz)
+sha256sums=('a11f31a373bfec3abae38ae719d0a59f666f1f067d8789ade2ed7032a152907d')
+
+prepare() {
+  cd $pkgname-$pkgver
+}
 
 build() {
   cd $pkgbase-$pkgver
@@ -39,7 +43,8 @@ build() {
 package_tracker() {
   depends=("libtracker-sparql=$pkgver-$pkgrel" libgee libsecret
            upower libexif exempi poppler-glib libgsf enca libiptcdata libcue libosinfo
-           networkmanager gtk3 desktop-file-utils hicolor-icon-theme libmediaart libgxps taglib flac libvorbis totem-plparser gst-plugins-base-libs giflib)
+           networkmanager gtk3 desktop-file-utils hicolor-icon-theme libmediaart libgxps
+           taglib flac libvorbis totem-plparser gst-plugins-base-libs giflib)
   optdepends=("nautilus: edit files' tracker tags")
   groups=('gnome')
   install=tracker.install
@@ -55,7 +60,7 @@ package_tracker() {
 
 package_libtracker-sparql() {
   pkgdesc="$pkgdesc (SPARQL library)"
-  depends=(sqlite icu glib2 libffi pcre util-linux)
+  depends=(sqlite icu glib2 libffi pcre util-linux libstemmer)
 
   cd $pkgbase-$pkgver
   make DESTDIR="$pkgdir" -C src/libtracker-common install-libtracker_commonLTLIBRARIES
