@@ -5,7 +5,7 @@
 
 pkgname=gnome-software
 pkgver=3.21.1
-pkgrel=4
+pkgrel=5
 pkgdesc="GNOME Software Tools"
 arch=(i686 x86_64)
 license=('GPL2')

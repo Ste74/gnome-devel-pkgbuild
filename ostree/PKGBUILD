@@ -18,6 +18,8 @@ md5sums=('97ce32bff3d8c1d24f5118607b96496d'
          'SKIP'
          'SKIP')
 
+MAKEFLAGS="-Wno-implicit"
+
 prepare() {
   cd "$srcdir/${pkgname}-${pkgver}"
   cp -r ../libglnx/* libglnx/
