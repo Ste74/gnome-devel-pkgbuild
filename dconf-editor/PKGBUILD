@@ -3,7 +3,7 @@
 
 pkgname=dconf-editor
 pkgver=3.21.1
-pkgrel=1
+pkgrel=2
 pkgdesc="dconf Editor"
 arch=(i686 x86_64)
 url="http://live.gnome.org/dconf"
