@@ -9,19 +9,20 @@ url='http://live.gnome.org/OSTree'
 license=('GPL2')
 depends=('libgsystem' 'libsoup' 'libarchive' 'gpgme')
 makedepends=('git' 'gtk-doc')
-_libglnxrev='0313864'
+_libglnxrev='7695227'
 _bsdiffrev='1edf9f6'
 source=("https://git.gnome.org/browse/${pkgname}/snapshot/${pkgname}-${pkgver}.tar.xz"
 	"git://github.com/GNOME/libglnx.git#commit=${_libglnxrev}"
 	"git://github.com/mendsley/bsdiff.git#commit=${_bsdiffrev}")
-md5sums=('97ce32bff3d8c1d24f5118607b96496d'
+md5sums=('f8259babf6c9786859f89dbdec0e9b7d'
          'SKIP'
          'SKIP')
 
-MAKEFLAGS="-Wno-implicit"
-
 prepare() {
   cd "$srcdir/${pkgname}-${pkgver}"
+
+  sed -i 's-/usr/bin/python-/usr/bin/python2-' tests/bootloader-entries-crosscheck.py
+
   cp -r ../libglnx/* libglnx/
   cp -r ../bsdiff/* bsdiff/
 }
@@ -33,7 +34,8 @@ build() {
   	       --libexecdir=/usr/lib \
   	       --sysconfdir=/etc \
   	       --with-systemdsystemunitdir=/usr/lib/systemd/system \
-  	       --with-mkinitcpio
+  	       --with-mkinitcpio \
+               --disable-installed-tests
   make
 }
 

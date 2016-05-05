@@ -11,7 +11,7 @@ arch=(i686 x86_64)
 license=('GPL2')
 url="https://wiki.gnome.org/Apps/Software/"
 depends=(gtk3 appstream-glib libsoup gsettings-desktop-schemas gnome-desktop packagekit
-         desktop-file-utils archlinux-appstream-data)
+         desktop-file-utils archlinux-appstream-data xdg-app)
 makedepends=(intltool)
 install=gnome-software.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
