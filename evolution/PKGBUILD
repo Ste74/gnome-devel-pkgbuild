@@ -4,8 +4,8 @@
 
 pkgbase=evolution
 pkgname=('evolution' 'evolution-bogofilter' 'evolution-spamassassin')
-pkgver=3.21.1
-pkgrel=2
+pkgver=3.21.2
+pkgrel=1
 pkgdesc="Manage your email, contacts and schedule"
 arch=(i686 x86_64)
 license=(GPL)
@@ -13,7 +13,7 @@ makedepends=(intltool itstool docbook-xsl networkmanager bogofilter spamassassin
 options=('!emptydirs')
 url=https://wiki.gnome.org/Apps/Evolution
 source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-sha256sums=('5db1f505bb64f6028db689804fb7b2067cace0b52c4df9bb26b28506ce2e9789')
+sha256sums=('0d1f3c227dac737f6cfa26254539f4a83719ce7be482618aa201d02b2bd4eff6')
 
 prepare() {
   cd $pkgname-$pkgver
