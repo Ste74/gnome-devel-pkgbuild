@@ -14,15 +14,12 @@ depends=(gtk3 appstream-glib libsoup gsettings-desktop-schemas gnome-desktop pac
          desktop-file-utils archlinux-appstream-data flatpak)
 makedepends=(intltool)
 install=gnome-software.install
-source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
-        fix-css.patch::https://git.gnome.org/browse/gnome-software/patch/?id=83b46a2a063ee1d4991779364f57bac07413f9ad)
-sha256sums=('c903dac3c4a7e3e10aed6b8d72302f96319ea27f71e6d055c9db6eae73cd2301'
-            '32381db0074532784785dacc6855377a2bf4ccdb67c09a6164b910d3f68cfef4')
+source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+sha256sums=('c903dac3c4a7e3e10aed6b8d72302f96319ea27f71e6d055c9db6eae73cd2301')
 
 prepare () {
   cd $pkgname-$pkgver
 
-  patch -Np1 -i ../fix-css.patch
 }
 
 build() {
