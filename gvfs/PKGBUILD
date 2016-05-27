@@ -4,8 +4,8 @@
 pkgbase=gvfs
 pkgname=(gvfs gvfs-{smb,afc,gphoto2,goa,mtp,nfs,google})
 pkgdesc="Virtual filesystem implementation for GIO"
-pkgver=1.29.1
-pkgrel=2
+pkgver=1.29.2
+pkgrel=1
 arch=(i686 x86_64)
 license=(LGPL)
 depends=(avahi dconf fuse libarchive libcdio-paranoia libsoup udisks2 libsecret
@@ -15,7 +15,7 @@ makedepends=(dbus intltool libgphoto2 libimobiledevice smbclient docbook-xsl
 url="http://www.gnome.org"
 groups=(gnome)
 source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-sha256sums=('afd7b70918ec6c0532826a4a59514a68d6c7a0c679b3b62cafaeb73928af7aba')
+sha256sums=('4a61903a98b4e8e87c6fab9c41c214c132afd2d73577db5e4de99eb6d31b033b')
 
 prepare() {
   cd "$pkgbase-$pkgver"
