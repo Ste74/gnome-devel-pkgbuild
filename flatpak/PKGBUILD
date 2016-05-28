@@ -12,6 +12,7 @@ depends=(dbus systemd glib2 libsoup polkit xorg-xauth libgsystem ostree fuse
          json-glib libseccomp libarchive libelf libcap)
 makedepends=(intltool python libxslt gobject-introspection gtk-doc git)
 install=flatpak.install
+replaces=("xdg-app")
 source=("git+https://github.com/flatpak/flatpak#tag=$pkgver"
         "git+https://git.gnome.org/browse/libglnx"
         "git+https://github.com/projectatomic/bubblewrap")
