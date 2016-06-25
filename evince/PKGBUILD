@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=evince
-pkgver=3.20.0
+pkgver=3.21.3
 pkgrel=1
 pkgdesc="Document viewer (PDF, Postscript, djvu, tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr,cbz,cb7 and cbt))"
 url="https://wiki.gnome.org/Apps/Evince"
@@ -16,7 +16,7 @@ groups=(gnome)
 install=evince.install
 options=('!emptydirs')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('cf8358a453686c2a7f85d245f83fe918c0ce02eb6532339f3e02e31249a5a280')
+sha256sums=('4097cbc6a6404bc3d84549873108cac8265aafc5bd43061c2aeb632ad5ef1be0')
 
 build() {
   cd $pkgname-$pkgver
