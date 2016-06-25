@@ -4,8 +4,8 @@
 # Contributor: William Rea <sillywilly@gmail.com>
 
 pkgname=orca
-pkgver=3.21.1
-pkgrel=2
+pkgver=3.21.3
+pkgrel=1
 pkgdesc="Screen reader for individuals who are blind or visually impaired"
 arch=(any)
 license=('LGPL')
@@ -18,7 +18,7 @@ depends=(gtk3 at-spi2-atk python-atspi python-dbus python-xdg speech-dispatcher 
 makedepends=(itstool intltool)
 groups=(gnome-extra)
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('68e67d764a222c5ec186b52dcffe1ab9599a9cc94b8dc94fa5d3b088afae1d13')
+sha256sums=('d8c22d1f0fc043dd73a9a398316920b6d7b9ab7dffefce882be7db40f9933bc1')
 
 build() {
   cd $pkgname-$pkgver
