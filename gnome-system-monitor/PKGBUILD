@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-system-monitor
-pkgver=3.20.1
+pkgver=3.21.3
 pkgrel=1
 pkgdesc="A system monitor for GNOME"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ url="http://www.gnome.org"
 groups=('gnome')
 install=gnome-system-monitor.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('9b23ab443fd92050b95c03a0ab321bbd41696a0ffc89c06e79c8798dca0a44f9')
+sha256sums=('7a29426e8940bc1bdaa22eb81efa37dac56668878b84f3e0af7632c63cc9a0fb')
 
 build() {
   cd $pkgname-$pkgver
