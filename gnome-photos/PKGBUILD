@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-photos
-pkgver=3.21.3
+pkgver=3.21.4
 pkgrel=1
 pkgdesc="Access, organize, and share your photos on GNOME"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ makedepends=(intltool itstool python)
 groups=(gnome-extra)
 install=gnome-photos.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-sha256sums=('85f4bae4f6ee73dccbbb69ca1053ea3da3a20a968519022cd16f63fc61a56139')
+sha256sums=('cc5660109d3f3939a3bc6847028d42bee892944cf9d825276190db32e3710058')
 
 build() {
   cd $pkgname-$pkgver
