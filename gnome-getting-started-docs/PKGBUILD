@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-getting-started-docs
-pkgver=3.20.0
+pkgver=3.21.90
 pkgrel=1
 pkgdesc="Help a new user get started in GNOME"
 arch=(any)
@@ -13,7 +13,7 @@ makedepends=(yelp-tools)
 url="http://www.gnome.org"
 groups=(gnome-extra)
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('0dc3a69d646c3ee3c6ef1a34dbc7f469d66275bd20215071fd495ae5900fcfdc')
+sha256sums=('47736b6322a2c895ba20166f71a14a8e97cba09abd6af1b9525d965c9c71ba3e')
 
 build() {
   cd $pkgname-$pkgver
