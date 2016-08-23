@@ -2,7 +2,7 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gdk-pixbuf2
-pkgver=2.35.2
+pkgver=2.35.3
 pkgrel=1
 pkgdesc="An image loading library"
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ makedepends=('gtk-doc' 'gobject-introspection')
 install=gdk-pixbuf2.install
 source=(http://download.gnome.org/sources/gdk-pixbuf/${pkgver:0:4}/gdk-pixbuf-$pkgver.tar.xz
         gdk-pixbuf-query-loaders.hook)
-sha256sums=('0062e2dc1555d386941042fd779c6d0bb1561ed772bae46095d088062cb34c88'
+sha256sums=('ab4cdba365426685db049eca35e35147fe350b927cc68e469d54799c64d0cb23'
             '963afcfacde9fd36031d93c8aa4c94a669ab1dbe9ba0d2cf17599b7d358e54c2')
 
 build() {
