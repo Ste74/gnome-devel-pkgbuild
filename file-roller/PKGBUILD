@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=file-roller
-pkgver=3.20.1
+pkgver=3.21.90
 pkgrel=1
 pkgdesc="Create and modify archives"
 arch=('i686' 'x86_64')
@@ -19,7 +19,7 @@ options=('!emptydirs')
 install=file-roller.install
 url="http://www.gnome.org"
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('c8b3db59ae12d0efde2e8e28d0cb475508ffc33bf08aa5194fbf5f702b6aa333')
+sha256sums=('af117088572de573093966cfe4739ea1fa15f1c83707bbb800b64fecbef7a712')
 
 build() {
   cd $pkgname-$pkgver
