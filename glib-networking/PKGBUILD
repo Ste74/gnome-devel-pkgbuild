@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=glib-networking
-pkgver=2.48.0
+pkgver=2.49.90
 pkgrel=1
 pkgdesc="Network-related giomodules for glib"
 arch=(i686 x86_64)
@@ -12,7 +12,7 @@ depends=(glib2 libproxy gnutls ca-certificates gsettings-desktop-schemas)
 makedepends=(intltool)
 install=glib-networking.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('7a1f3312e757b97af94e2db8a1f14eb9cc018c983931ecdf3b0c54acece39024')
+sha256sums=('409ceae012ce6f8ad12aaded90e6a08b82507de6a9a70ca6eb05e17244f2129b')
 
 build() {
   cd $pkgname-$pkgver
