@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-documents
-pkgver=3.20.0
+pkgver=3.21.90
 pkgrel=1
 pkgdesc="Documents Manager for GNOME"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ makedepends=(intltool gobject-introspection itstool docbook-xsl)
 optdepends=('unoconv: Support for Libreoffice document types')
 install=gnome-documents.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('a5fa496c5e80eccb8d2e5bba7f4d7dc4cc6c9f53d5bc028402428771be1237d2')
+sha256sums=('b8dff6ea0835753f744c73a23dc96a6697d2c0fbd65a4f3b6e9e55e54e66da3d')
 
 build() {
   cd $pkgname-$pkgver
