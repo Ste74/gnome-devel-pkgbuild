@@ -8,8 +8,8 @@
 
 pkgbase=networkmanager
 pkgname=(networkmanager libnm-glib)
-pkgver=1.2.0
-pkgrel=3
+pkgver=1.3.91
+pkgrel=1
 pkgdesc="Network Management daemon"
 arch=(i686 x86_64)
 license=(GPL2 LGPL2.1)
@@ -21,9 +21,8 @@ makedepends=(intltool dhclient iptables gobject-introspection gtk-doc
              libnewt libndp libteam vala perl-yaml python-gobject)
 checkdepends=(libx11 python-dbus)
 source=(https://download.gnome.org/sources/NetworkManager/${pkgver:0:3}/NetworkManager-$pkgver.tar.xz
-        dhcpv6-mixed.patch
         NetworkManager.conf)
-sha256sums=('e947cf30fa3d19dce88e6f6af51f06dc282b7db7996f946aaa37b03526ef2a80'
+sha256sums=('c0c02a21827661a2bef70711ec8e5b8b83880b5cd59cbd367444b9ea8b7d86b8'
             '452e4f77c1de92b1e08f6f58674a6c52a2b2d65b7deb0ba436e9afa91ee15103')
 
 prepare() {
