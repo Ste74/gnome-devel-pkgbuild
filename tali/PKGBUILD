@@ -3,7 +3,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=tali
-pkgver=3.21.4
+pkgver=3.21.90
 pkgrel=1
 pkgdesc="Beat the odds in a poker-style dice game"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=tali.install
 url="https://live.gnome.org/Tali"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('4ecdb9ee38f73aed5bd6b212e915cf5d7dbdde86b12b3a5cb7384d93cb036918')
+sha256sums=('4423e8a7133dd838f18067c197d8021ec576825dafa8e38dd7e65ac312b12465')
 
 build() {
   cd $pkgname-$pkgver
