@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=four-in-a-row
-pkgver=3.20.1
+pkgver=3.21.90
 pkgrel=1
 pkgdesc="Make lines of the same color to win"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=four-in-a-row.install
 url="https://live.gnome.org/Four-in-a-row"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('3f3689fbbc25a91deb4af277cdc20e8db0e5aecfd17dc1376ad4b8d993ab7cf7')
+sha256sums=('4f39572ae6d887efd14065a246dc8d52ba8a1195312cb9f7e5f0817927d073a5')
 
 build() {
   cd $pkgname-$pkgver
