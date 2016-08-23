@@ -9,7 +9,7 @@ url="https://wiki.gnome.org/Apps/Builder"
 arch=(i686 x86_64)
 license=(GPL3)
 depends=(gtksourceview3 devhelp libgit2-glib gjs python-gobject clang desktop-file-utils
-         ctags libpeas vte3 vala python-jedi flatpak)
+         ctags libpeas vte3 vala python-jedi flatpak mm-common sysprof)
 makedepends=(intltool llvm gobject-introspection gtk-doc)
 groups=(gnome-extra)
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
