@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-shell-extensions
-pkgver=3.21.4
+pkgver=3.21.90
 pkgrel=1
 pkgdesc="Extensions for GNOME shell, including classic mode"
 arch=(any)
@@ -14,7 +14,7 @@ optdepends=('nautilus: gnome-classic session')
 install=gnome-shell-extensions.install
 groups=('gnome')
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('d8caef862a593ce062e90184ed317807c73a9c014b8a3e024828176b679fdd19')
+sha256sums=('c5517642980362aaca24872b73a9a53e3db0a909659bcc024d8030b3c04ea797')
 
 build() {
   cd $pkgname-$pkgver
