@@ -1,0 +1,24 @@
+# Maintainer: Fernando Fernandez <fernando@softwareperonista.com.ar>
+
+pkgname=libgepub
+pkgver=0.3
+pkgrel=1
+pkgdesc="Simple library to read epub files using glib"
+arch=('i686' 'x86_64')
+url="https://git.gnome.org/browse/libgepub/"
+license=("GPL")
+source=(https://git.gnome.org/browse/$pkgname/snapshot/$pkgname-$pkgver.tar.xz)
+depends=('gtk3' 'libarchive')
+makedepends=()
+md5sums=('0fc0a7b217ae07e902c243c9769b8d64')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  ./autogen.sh --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+}
