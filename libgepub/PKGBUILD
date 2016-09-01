@@ -1,7 +1,7 @@
 # Maintainer: Fernando Fernandez <fernando@softwareperonista.com.ar>
 
 pkgname=libgepub
-pkgver=0.3
+pkgver=0.4
 pkgrel=1
 pkgdesc="Simple library to read epub files using glib"
 arch=('i686' 'x86_64')
@@ -10,7 +10,7 @@ license=("GPL")
 source=(https://git.gnome.org/browse/$pkgname/snapshot/$pkgname-$pkgver.tar.xz)
 depends=('gtk3' 'libarchive')
 makedepends=()
-md5sums=('0fc0a7b217ae07e902c243c9769b8d64')
+md5sums=('3fda196faed9b5af84a4e2b9741b848e')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
