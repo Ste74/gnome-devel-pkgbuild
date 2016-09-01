@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=appstream-glib
-pkgver=0.6.1
+pkgver=0.6.2
 pkgrel=1
 pkgdesc="Provides GObjects and helper methods to make it easy to read and write AppStream metadata"
 arch=('i686' 'x86_64')
@@ -14,7 +14,7 @@ provides=('appdata-tools')
 conflicts=('appdata-tools')
 replaces=('appdata-tools')
 source=(http://people.freedesktop.org/~hughsient/appstream-glib/releases/$pkgname-$pkgver.tar.xz)
-md5sums=('65192dc4bd499bae9e695df99ea7d5cd')
+md5sums=('cffbae6071f7e33ee89fd8f1e0ae271a')
 
 build() {
   cd $pkgname-$pkgver
