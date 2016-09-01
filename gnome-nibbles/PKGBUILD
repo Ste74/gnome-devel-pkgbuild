@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-nibbles
-pkgver=3.21.90
+pkgver=3.21.91
 pkgrel=1
 pkgdesc="Guide a worm around a maze"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=gnome-nibbles.install
 url="https://wiki.gnome.org/Apps/Nibbles"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('9be459216c7089cfce4f39ba722e24fbc4abbeec3605fa70399dd3d86d5bff39')
+sha256sums=('bb0fdc6b601568f876dab69749cb4987d781d43db7be690a6b0f87ad4380a363')
 
 build() {
   cd $pkgname-$pkgver
