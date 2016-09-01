@@ -2,7 +2,7 @@
 # Maintainer: Balló György <ballogyor+arch at gmail dot com>
 
 pkgname=gnome-initial-setup
-pkgver=3.19.92
+pkgver=3.21.91
 pkgrel=1
 pkgdesc="Simple, easy, and safe way to prepare a new system"
 arch=('i686' 'x86_64')
@@ -15,7 +15,7 @@ optdepends=('gdm: GDM Initial Setup mode'
             'gnome-getting-started-docs: GNOME Welcome Tour')
 install=$pkgname.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-md5sums=('39b148a75e67c3323bb92989972aeadb')
+md5sums=('5be655d13e5d4a0274e45380bd377712')
 
 build() {
   cd $pkgname-$pkgver
