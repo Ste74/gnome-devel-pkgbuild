@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-klotski
-pkgver=3.21.90
+pkgver=3.21.91
 pkgrel=1
 pkgdesc="Slide blocks to solve the puzzle"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=gnome-klotski.install
 url="https://live.gnome.org/Klotski"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('f3af1853e813037a8b46e6c2790a55ac0269718f9e998614b6e94e8588b8b632')
+sha256sums=('f6223f92c71b01a4d25b3dcf7af2230c35e819e20063005c2620eda4f73e67a6')
 
 build() {
   cd $pkgname-$pkgver
