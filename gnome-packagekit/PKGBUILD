@@ -4,7 +4,7 @@
 # Contributor: Jonathan Conder <jonno.conder@gmail.com>
 
 pkgname=gnome-packagekit
-pkgver=3.21.90
+pkgver=3.21.91
 pkgrel=1
 pkgdesc='Collection of graphical tools for PackageKit to be used in the GNOME desktop'
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ license=('GPL')
 depends=('desktop-file-utils' 'gtk3' 'libnotify' 'packagekit')
 makedepends=('intltool' 'itstool' 'docbook-xsl' 'libcanberra')
 source=("https://download.gnome.org/sources/${pkgname}/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('f1c0f34ee751120e51bae4f0953fa00155e95fa618cbf6cf8dc80451f87fda0d')
+sha256sums=('5eee7c5a56c6fe62c75bdfb022aec7ba4c70163b42a107ae2ac704a8bfd94d40')
 
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
