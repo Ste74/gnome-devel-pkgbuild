@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=swell-foop
-pkgver=3.21.90
+pkgver=3.21.91
 pkgrel=1
 pkgdesc="Clear the screen by removing groups of colored and shaped tiles"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=swell-foop.install
 url="https://wiki.gnome.org/Apps/Swell%20Foop"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('15fcd6209daa1d47e4f65233cb064fe075cabf9d74823f9ed10520decec7419a')
+sha256sums=('99592a427f28831584d9eeadfc7935e93d1b0c1b9fd66d32dc7983cfb53896fb')
 
 build() {
   cd $pkgname-$pkgver
