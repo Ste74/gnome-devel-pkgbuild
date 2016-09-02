@@ -1,0 +1,28 @@
+pkgname=gnome-autoar
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Automatic archives creating and extracting library"
+arch=(i686 x86_64)
+license=(GPL)
+depends=(glib2 gtk3 libarchive)
+url="http://www.gnome.org"
+source=(https://git.gnome.org/browse/gnome-autoar/snapshot/$pkgname-$pkgver.tar.xz)
+sha256sums=('f29ec3423c54c21ea3d8bbb1b2d4299fbb042714c0be9813bd80c777379b04d7')
+
+prepare() {
+  cd $pkgname-$pkgver
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+}
+
+# vim: ft=sh:ts=2:sw=2:et
