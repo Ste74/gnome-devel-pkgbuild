@@ -4,12 +4,12 @@
 pkgbase=nautilus
 pkgname=(nautilus libnautilus-extension)
 pkgver=3.21.91
-pkgrel=1
+pkgrel=2
 pkgdesc="GNOME file manager"
 arch=(i686 x86_64)
 license=(GPL)
 depends=(libexif gnome-desktop exempi gvfs desktop-file-utils dconf 
-         libtracker-sparql nautilus-sendto)
+         libtracker-sparql nautilus-sendto gnome-autoar)
 makedepends=(intltool gobject-introspection python packagekit python2)
 url="http://www.gnome.org"
 options=('!emptydirs')
