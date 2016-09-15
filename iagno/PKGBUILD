@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=iagno
-pkgver=3.21.91
+pkgver=3.21.92
 pkgrel=1
 pkgdesc="Dominate the board in a classic version of Reversi"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=iagno.install
 url="https://live.gnome.org/Iagno"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('3f707445a194d77115c7f66a2c853b11b67bd8a290f32188ef496669e47d742b')
+sha256sums=('062f0964e6cf55d98daa19671fc875b8c83238c0dff958eea5636b185ccc2572')
 
 build() {
   cd $pkgname-$pkgver
