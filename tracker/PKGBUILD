@@ -5,7 +5,7 @@
 
 pkgbase=tracker
 pkgname=(tracker libtracker-sparql)
-pkgver=1.9.1
+pkgver=1.9.2
 pkgrel=1
 pkgdesc="All-in-one indexer, search tool and metadata database"
 arch=(i686 x86_64)
@@ -17,7 +17,7 @@ makedepends=(libgee libsecret upower libexif exempi poppler-glib libgsf icu enca
 url="http://www.gnome.org"
 options=('!emptydirs')
 source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:3}/$pkgbase-$pkgver.tar.xz)
-sha256sums=('70f38d2f71d1d14b68d60d4f0dc8fa1296687a3b9bc7ac951ba02605cb02883e')
+sha256sums=('360214a495aef3a76ce1c2189c44fe164864d313082278c28e0ecc2246667a5a')
 
 prepare() {
   cd $pkgname-$pkgver
