@@ -4,7 +4,7 @@
 # Contributor: Michael Kanis <mkanis_at_gmx_dot_de>
 
 pkgname=mutter
-pkgver=3.21.91
+pkgver=3.21.92
 pkgrel=1
 pkgdesc="A window manager for GNOME"
 arch=(i686 x86_64)
@@ -18,7 +18,7 @@ groups=('gnome')
 options=('!emptydirs')
 install=mutter.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('b3e1287114b8b4aef3ab19d0c0dcbb40c12956d58eb89fce01b63bbefb8ca419')
+sha256sums=('154738f5039326415ac0ee7a4b7ede2aae83c9da46a9c7bc9ef8c9eeacabb09b')
 
 build() {
   cd "$pkgname-$pkgver"
