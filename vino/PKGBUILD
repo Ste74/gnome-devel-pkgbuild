@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=vino
-pkgver=3.20.1
+pkgver=3.21.92
 pkgrel=1
 pkgdesc="a VNC server for the GNOME desktop"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ url="http://www.gnome.org"
 options=(!emptydirs)
 install=vino.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('d7f4a6d58ae864904487ce6b8f298a6f51268e9148be377e64134aa542b15fc7')
+sha256sums=('4e46763a52194121c3252a6f295de67728d69b9f66df6409fb1e2d570f2e1e18')
 
 build() {
   cd $pkgname-$pkgver
