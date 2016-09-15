@@ -3,7 +3,7 @@
 # Contributor: Balló György <ballogyor+arch at gmail dot com>
 
 pkgname=rygel
-pkgver=0.31.5
+pkgver=0.31.6
 pkgrel=1
 pkgdesc="UPnP AV MediaServer and MediaRenderer that allows you to easily share audio, video and pictures, and control of media player on your home network"
 arch=(i686 x86_64)
@@ -22,7 +22,7 @@ install=rygel.install
 groups=('gnome-extra')
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
         org.gnome.Rygel1.service rygel.service)
-sha256sums=('01a9af67331bb0a07db99daa9a4f6191b8083f15b726b6b439da562c9b9f5412'
+sha256sums=('f2946b6491e6e528720a1679492056ddbc5e8d04933ec52e27e03bc0e2adbd16'
             '0997df280adf182772e30613986c6fdbb4b76626182aa7ac03e4315f745499fe'
             '5fdb7b439e5b69407d0d1a24ee2543657a76ec39eb5d8a8271405b74a1fa9061')
 
