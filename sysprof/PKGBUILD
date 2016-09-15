@@ -6,7 +6,7 @@
 # Previous Contributor: Gabriel Rauter <rauter.gabriel@gmail.com>
 
 pkgname=sysprof
-pkgver=3.21.90
+pkgver=3.21.91
 pkgrel=1
 pkgdesc="a profiling tool that helps in finding the functions in which a program uses most of its time"
 arch=('i686' 'x86_64')
@@ -15,7 +15,7 @@ license=("GPL")
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
 depends=('gtk3' 'glib2' 'polkit')
 makedepends=('gtk3' 'glib2' 'systemd' 'itstool')
-md5sums=('36a4dc586d7bff8a7f0643a7eb51b22f')
+md5sums=('44e405c4e7ad88ce21d106d0bf7f9714')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
