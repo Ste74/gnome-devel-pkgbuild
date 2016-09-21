@@ -2,7 +2,7 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gnome-tweak-tool
-pkgver=3.21.91
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="A tool to customize advanced GNOME 3 options."
 arch=(any)
@@ -13,7 +13,7 @@ makedepends=('intltool')
 groups=('gnome-extra')
 install=gnome-tweak-tool.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('509d8e56d29969669aaa096a4c15a5b3f042caba321000112424ff862f2a6434')
+sha256sums=('3d6ae11e13f6169ee543e573135e1e5697cf92ab8d86570c6f952021ae093abb')
 
 build() {
   cd "$pkgname-$pkgver"
