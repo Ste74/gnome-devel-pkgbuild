@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-robots
-pkgver=3.21.91
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="Avoid the robots and make them crash into each other"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=gnome-robots.install
 url="https://live.gnome.org/Robots"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('151dc4074df2a7b77232946f6905b1ea0663b3147382a6ca58ef601409a888f3')
+sha256sums=('ddb02f9d04c970354d1836813f8c0d9ffc3ff509091d2580384e2275663e6f73')
 
 build() {
   cd $pkgname-$pkgver
