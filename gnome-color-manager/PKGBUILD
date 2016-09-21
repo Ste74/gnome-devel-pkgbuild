@@ -14,15 +14,12 @@ optdepends=('argyllcms: color calibration')
 install=gnome-color-manager.install
 options=('!emptydirs')
 groups=('gnome-extra')
-source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
-	"fix-man-pages-to-use-the-correct-package-name.patch::https://git.gnome.org/browse/gnome-color-manager/patch/?id=3c8fb5c8d222544ac98341b9a0fd0999ef7837dd")
+source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
 sha256sums=('3ad59d078d9624086f04effd0af7d830e09ffa736fa87eca7ff0015400299de8')
 
 prepare(){
   cd $pkgname-$pkgver
-  
-  patch -p1 -i ../fix-man-pages-to-use-the-correct-package-name.patch
-}
+  }
 
 build(){
   cd $pkgname-$pkgver
