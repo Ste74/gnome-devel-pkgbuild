@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-terminal
-pkgver=3.21.92
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="The GNOME Terminal Emulator"
 arch=(i686 x86_64)
@@ -16,7 +16,7 @@ url="http://www.gnome.org"
 groups=('gnome')
 install=gnome-terminal.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('74baa6c3913382a4863f93d11f6b423734e7035e9cd378bc40c08230dd7c0a31')
+sha256sums=('97e6b1b4128ac133d8917b3940c71ddf9b89d189c5ac8402b1060126733993ed')
 
 build() {
   cd $pkgname-$pkgver
