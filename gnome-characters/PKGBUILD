@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-characters
-pkgver=3.21.91.1
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="Simple utility application to find and insert unusual characters"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ makedepends=(intltool gobject-introspection)
 install=gnome-characters.install
 groups=('gnome-extra')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('edd521dfbabf1c00ff6905acdc124c4082184ef58bcdbacb85967a659691a674')
+sha256sums=('0778b625646d6d934cf252d58a2e16403889da6bfc237bdca1d3cb3258f63d4e')
 
 build() {
   cd $pkgname-$pkgver
