@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-devel-docs
-pkgver=3.21.90
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="Developer documentation for GNOME"
 arch=(any)
@@ -12,7 +12,7 @@ makedepends=('yelp-tools')
 url="http://www.gnome.org"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('112de5db1e36933c71ce4e11163c0fea86993cae9aa905104cd7a3faff426f9f')
+sha256sums=('e0778c62670b1c19d45191ac5503568cbd09500e9e30015b48c19e95959e6d85')
 
 build() {
   cd $pkgname-$pkgver
