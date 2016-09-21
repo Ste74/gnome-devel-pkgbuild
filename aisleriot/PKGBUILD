@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=aisleriot
-pkgver=3.20.1
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="A collection of patience games written in guile scheme"
 arch=(i686 x86_64)
@@ -17,7 +17,7 @@ optdepends=('libkdegames: KDE card sets'
 options=('!emptydirs')
 install=aisleriot.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('fe9d7727e237e421bd6d253918b3caecd1f84dba9d7354610d484a33869f37da')
+sha256sums=('e7b603df0a482bdd0ab8083efc096a24a46aea1b36cc8608846e568b7a353eb7')
 
 build() {
   cd $pkgname-$pkgver
