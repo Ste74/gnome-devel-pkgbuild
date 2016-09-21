@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=libgnome-games-support
-pkgver=1.1.91
+pkgver=1.2.0
 pkgrel=1
 pkgdesc="Code shared between GNOME games"
 url="https://git.gnome.org/browse/libgames-support/"
@@ -13,7 +13,7 @@ provides=(libgames-support)
 depends=(gtk3 libgee)
 makedepends=(gobject-introspection vala intltool)
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:3}/$pkgname-$pkgver.tar.xz)
-sha256sums=('d894c1526bbda095bec148a8affc9f9a924a0f817d91f38ffccee659fd4051f3')
+sha256sums=('74d42d74bbc960b066712ab2705fcb9aad5785e09184c298940b06e64389d154')
 
 build() {
   cd $pkgname-$pkgver
