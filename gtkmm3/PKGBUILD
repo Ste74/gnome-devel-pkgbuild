@@ -4,7 +4,7 @@
 pkgbase=gtkmm3
 _pkgbasename=gtkmm
 pkgname=('gtkmm3' 'gtkmm3-docs')
-pkgver=3.21.4
+pkgver=3.22.0
 pkgrel=1
 arch=('i686' 'x86_64')
 makedepends=('gtk3' 'pangomm' 'atkmm' 'glibmm-docs' 'mm-common' 'doxygen' 'libxslt')
@@ -12,7 +12,7 @@ license=('LGPL')
 options=('!emptydirs')
 url="http://www.gtkmm.org/"
 source=(http://ftp.gnome.org/pub/GNOME/sources/$_pkgbasename/${pkgver:0:4}/$_pkgbasename-$pkgver.tar.xz)
-sha256sums=('efad46b97d5340cde354a9672629f209fb06a164808482919c932e2e8303f8ca')
+sha256sums=('05da4d4b628fb20c8384630ddf478a3b5562952b2d6181fe28d58f6cbc0514f5')
 
 build() {
   cd "$_pkgbasename-$pkgver"
