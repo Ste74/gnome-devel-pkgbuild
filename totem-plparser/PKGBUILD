@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=totem-plparser
-pkgver=3.10.6
+pkgver=3.10.7
 pkgrel=1
 url="http://www.gnome.org"
 pkgdesc="Totem playlist parser library"
@@ -12,7 +12,7 @@ arch=(i686 x86_64)
 depends=('gmime' 'libsoup' 'libarchive' 'libquvi')
 makedepends=('intltool' 'gobject-introspection')
 source=(http://ftp.gnome.org/pub/gnome/sources/totem-pl-parser/${pkgver:0:4}/totem-pl-parser-$pkgver.tar.xz)
-sha256sums=('98a5d9bed1b1c012aeb2692ded2fd49399593f70f297f43e01fc1c5e13576757')
+sha256sums=('9c8285bc3131faa309d5cba5a919d5166abc2b8cc5a0c850fe861be8b14e089c')
 
 build() {
   cd totem-pl-parser-$pkgver
