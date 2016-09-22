@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=quadrapassel
-pkgver=3.21.90
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="Fit falling blocks together (Tetris-like game for GNOME)"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=quadrapassel.install
 url="https://live.gnome.org/Quadrapassel"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('1ac4c5c95388d612f759553158de3f9dc700b2a31ae03240b8e736e196457343')
+sha256sums=('0ed44ef73c8811cbdfc3b44c8fd80eb6e2998d102d59ac324e4748f5d9dddb55')
 
 build() {
   cd $pkgname-$pkgver
