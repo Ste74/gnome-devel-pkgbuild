@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=dconf-editor
-pkgver=3.21.90
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="dconf Editor"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ depends=('gtk3' 'dconf')
 makedepends=('vala' 'intltool')
 install=dconf-editor.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('bb2da61905dfb021f1f36b21c9d792a3b4f280211a57768b469ebfd47a21ad48')
+sha256sums=('4ca3c2c3836f4c944f161540d1521507dab8e7bee0cac7d543560808efb9246f')
 
 build() {
   cd $pkgname-$pkgver
