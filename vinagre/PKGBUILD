@@ -18,8 +18,17 @@ optdepends=('openssh: SSH plugin')
 makedepends=(docbook-xsl intltool openssh itstool spice-protocol)
 groups=(gnome-extra)
 options=('!emptydirs')
-source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
+source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
+	0001-fix-freerdp-check.patch)
 sha256sums=('0dc2038776cf58097baec16aef9d9eb1b4cf1ed9a4973e2c2ead3415cbbcb172')
+
+prepare() {
+  cd $pkgname-$pkgver
+
+  patch -p1 -i ../0001-fix-freerdp-check.patch
+
+  autoreconf --force
+}
 
 build() {
   cd $pkgname-$pkgver
