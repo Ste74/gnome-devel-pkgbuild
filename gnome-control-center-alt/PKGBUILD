@@ -1,0 +1,49 @@
+# $Id: PKGBUILD 264849 2016-04-13 20:55:16Z heftig $
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=gnome-control-center-alt
+_pkgname=gnome-control-center
+pkgver=3.22.0
+pkgrel=1
+pkgdesc="The Control Center for GNOME"
+license=(GPL)
+arch=(i686 x86_64)
+depends=(gnome-control-center)
+makedepends=(intltool docbook-xsl modemmanager gnome-common)
+optdepends=('system-config-printer: Printer settings'
+            'gnome-user-share: Bluetooth and WebDAV file sharing'
+            'rygel: media sharing'
+            'vino: screen sharing'
+            'openssh: remote login')
+groups=(gnome)
+url="http://www.gnome.org"
+install=gnome-control-center-alt.install
+options=('!emptydirs')
+source=(http://download.gnome.org/sources/$_pkgname/${pkgver:0:4}/$_pkgname-$pkgver.tar.xz)
+sha256sums=('d264ae919aeeb27987dcdd5af5577fad0590e1f184f506b563c89f356aab5052')
+
+prepare() {
+  cd $_pkgname-$pkgver
+  ACLOCAL_FLAGS="-I libgd" NOCONFIGURE=1 srcdir=. gnome-autogen.sh
+}
+
+
+build() {
+  cd $_pkgname-$pkgver
+
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+      --libexecdir=/usr/lib/$pkgname --disable-static
+
+  #https://bugzilla.gnome.org/show_bug.cgi?id=656229
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' -e 's/    if test "$export_dynamic" = yes && test -n "$export_dynamic_flag_spec"; then/      func_append compile_command " -Wl,-O1,--as-needed"\n      func_append finalize_command " -Wl,-O1,--as-needed"\n\0/' libtool
+
+  make
+}
+
+package() {
+  cd $_pkgname-$pkgver
+
+  
+  install -D "shell/gnome-control-center-alt" "$pkgdir/usr/bin/gnome-control-center-alt"
+}
