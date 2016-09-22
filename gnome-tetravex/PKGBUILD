@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-tetravex
-pkgver=3.21.90
+pkgver=3.22.0
 pkgrel=1
 pkgdesc="Complete the puzzle by matching numbered tiles"
 arch=(i686 x86_64)
@@ -17,7 +17,7 @@ install=gnome-tetravex.install
 url="https://live.gnome.org/Tetravex"
 groups=(gnome-extra)
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('915550ffc22e930915993a05227367288edc154e683dea53887e5add2277cfbe')
+sha256sums=('0a6d7ff5ffcd6c05454a919d46a2e389d6b5f87bc80e82c52c2f20d9d914e18d')
 
 build() {
   cd $pkgname-$pkgver
