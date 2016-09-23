@@ -5,7 +5,7 @@
 pkgbase=glibmm
 pkgname=('glibmm' 'glibmm-docs')
 pkgver=2.50.0
-pkgrel=2
+pkgrel=3
 arch=('i686' 'x86_64')
 license=('LGPL')
 makedepends=('glib2' 'libsigc++' 'pkgconfig')
@@ -30,6 +30,7 @@ package_glibmm() {
 }
 
 package_glibmm-docs() {
+  arch=('any')
   pkgdesc="Developer documentation for glibmm"
   cd "$pkgbase-$pkgver/docs"
   make DESTDIR="$pkgdir" install
