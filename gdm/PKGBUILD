@@ -5,7 +5,7 @@
 pkgbase=gdm
 pkgname=(gdm libgdm)
 pkgver=3.22.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Gnome Display Manager"
 arch=(i686 x86_64)
 license=(GPL)
@@ -77,7 +77,7 @@ package_gdm() {
 
 package_libgdm() {
   pkgdesc="GDM support library"
-  depends=(systemd glib2)
+  depends=('systemd' 'glib2' 'dconf')
   install=libgdm.install
 
   cd $pkgbase-$pkgver
