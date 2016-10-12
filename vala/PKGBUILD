@@ -3,7 +3,7 @@
 # Contributor: Timm Preetz <timm@preetz.us>
 
 pkgname=vala
-pkgver=0.34.0
+pkgver=0.34.1
 pkgrel=1
 pkgdesc="Compiler for the GObject type system"
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ depends=('glib2')
 makedepends=('libxslt')
 checkdepends=('dbus' 'libx11' 'gobject-introspection')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('5d59e1ad4c59debc83687b593345a3cf9ef2e9020354145e59a188de4348f455')
+sha256sums=('f5ccfcfc460a0c6797bfbd7e739042bf5988a0f44d82278dbe1880c0e5f29299')
 
 build() {
     cd $pkgname-$pkgver
