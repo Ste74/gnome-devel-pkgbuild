@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-music
-pkgver=3.22.0
+pkgver=3.22.1
 pkgrel=1
 pkgdesc="Music player and management application"
 arch=(i686 x86_64)
@@ -17,7 +17,7 @@ optdepends=('gst-plugins-good: Extra media codecs'
 groups=('gnome-extra')
 install=gnome-music.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('170685ffa89556951b9fb0b9225b2bca863e54348d4079a56b8e5c4eeafa9b03')
+sha256sums=('10eda266261a2f8e374906b49712f66c7e05528055d7a7be965ef8a83c005603')
 
 build() {
   cd $pkgname-$pkgver
