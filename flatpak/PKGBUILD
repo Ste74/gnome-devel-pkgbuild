@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=flatpak
-pkgver=0.6.8
+pkgver=0.6.13
 pkgrel=1
 pkgdesc="Application deployment framework for desktop apps"
 url="http://flatpak.org"
@@ -36,16 +36,11 @@ build() {
 
   ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
     --sbindir=/usr/bin --libexecdir=/usr/lib --disable-static \
-    --enable-gtk-doc --with-priv-mode=setuid
+    --enable-gtk-doc --with-priv-mode=setuid --disable-test
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
   make
-}
-
-check() {
-  cd $pkgname
-  make -k check
 }
 
 package() {
