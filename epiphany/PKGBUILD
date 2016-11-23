@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=epiphany
-pkgver=3.22.1
+pkgver=3.23.2.1
 pkgrel=1
 install=epiphany.install
 pkgdesc="A GNOME web browser based on the WebKit rendering engine."
@@ -14,7 +14,7 @@ options=('!emptydirs')
 groups=('gnome')
 url="https://wiki.gnome.org/Apps/Web"
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('aab162ede54d71e583e382ab5e3567f28d81e0cd42719a11cad8008b56c5cc0e')
+sha256sums=('0b68565a6b096fc20e9db48469e69424549ff7345e37b4d0a100edc3aa9706ee')
 
 build() {
   cd $pkgname-$pkgver
