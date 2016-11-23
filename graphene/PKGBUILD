@@ -3,15 +3,15 @@
  
 pkgname=graphene
 pkgver=1.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A thin layer of graphic data types"
 url="https://github.com/ebassi/graphene"
 arch=(i686 x86_64)
 license=(MIT)
 depends=(glib2)
 makedepends=(git gtk-doc gobject-introspection)
-#source=("git+$url#tag=$pk815a0b1gver")
-source=("git+$url#commit=b1ef68435ba624f0a1187676e4f22f3a65f2431f")
+#source=("git+$url#tag=$pkgver")
+source=("git+$url")
 md5sums=('SKIP')
 
 _confargs=
@@ -19,6 +19,9 @@ _confargs=
 
 prepare() {
   cd $pkgname
+
+  git revert -n 217ac682ba4686267e05e9ff495afa5585f4b097
+
   NOCONFIGURE=1 ./autogen.sh
 }
  
