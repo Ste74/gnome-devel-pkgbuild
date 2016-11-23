@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
  
 pkgname=graphene
-pkgver=1.4.0
+pkgver=1.5.2
 pkgrel=1
 pkgdesc="A thin layer of graphic data types"
 url="https://github.com/ebassi/graphene"
@@ -10,7 +10,8 @@ arch=(i686 x86_64)
 license=(MIT)
 depends=(glib2)
 makedepends=(git gtk-doc gobject-introspection)
-source=("git+$url#tag=$pkgver")
+#source=("git+$url#tag=$pk815a0b1gver")
+source=("git+$url#commit=b1ef68435ba624f0a1187676e4f22f3a65f2431f")
 md5sums=('SKIP')
 
 _confargs=
@@ -18,7 +19,6 @@ _confargs=
 
 prepare() {
   cd $pkgname
-  sed -i '1s/python$/&2/' build/identfilter.py
   NOCONFIGURE=1 ./autogen.sh
 }
  

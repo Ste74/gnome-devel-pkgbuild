@@ -1,0 +1,24 @@
+pkgbase = libhttpseverywhere
+	pkgdesc = library to use HTTPSEverywhere in desktop applications
+	pkgver = 0.2.6
+	pkgrel = 1
+	url = https://git.gnome.org/browse/libhttpseverywhere
+	arch = i686
+	arch = x86_64
+	license = LGPL3
+	makedepends = meson
+	makedepends = ninja
+	makedepends = vala
+	makedepends = valadoc
+	makedepends = gobject-introspection
+	depends = libgee
+	depends = libxml2
+	depends = libarchive
+	depends = libsoup
+	depends = glib2
+	depends = json-glib
+	source = https://git.gnome.org/browse/libhttpseverywhere/snapshot/libhttpseverywhere-0.2.6.tar.xz
+	md5sums = 1341639f79dfb097a57a4211b503e774
+
+pkgname = libhttpseverywhere
+
