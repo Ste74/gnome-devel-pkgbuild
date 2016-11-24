@@ -3,7 +3,7 @@
 # Contributor: Flamelab <panosfilip@gmail.com
 
 pkgname=gnome-shell
-pkgver=3.23.1
+pkgver=3.23.2
 pkgrel=1
 pkgdesc="The next generation GNOME Shell"
 arch=(i686 x86_64)
@@ -20,7 +20,7 @@ install=gnome-shell.install
 groups=(gnome)
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
         nm-libexecdir.patch)
-sha256sums=('939588921a4b07bde5dfe623c1e814d5da6b16295326db966ed9625d6762093b'
+sha256sums=('c551a3c155dd05213d490336a4cb965f2c888bf3cc89ee8e9c29481188c6f4b1'
             'e5bb10ad2e5c3e0fde3d05babd1bfdda701e553e02d493f7e54cb7832ce7e607')
 
 prepare() {
