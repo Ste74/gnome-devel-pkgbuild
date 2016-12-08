@@ -5,7 +5,7 @@
 pkgbase=evolution
 pkgname=('evolution' 'evolution-bogofilter' 'evolution-spamassassin')
 pkgver=3.23.2
-pkgrel=2
+pkgrel=4
 pkgdesc="Manage your email, contacts and schedule"
 arch=(i686 x86_64)
 license=(GPL)
@@ -38,7 +38,7 @@ build() {
 
 package_evolution() {
   depends=(gnome-desktop evolution-data-server libcanberra libpst libytnef
-           desktop-file-utils dconf gtkspell3 libcryptui webkitgtk)
+           desktop-file-utils dconf gtkspell3 libcryptui webkitgtk gnome-autoar)
   install=evolution.install
   optdepends=('highlight: text highlight plugin'
               'evolution-spamassassin: Spamassassin spam check plugin'
