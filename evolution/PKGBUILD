@@ -4,7 +4,7 @@
 
 pkgbase=evolution
 pkgname=('evolution' 'evolution-bogofilter' 'evolution-spamassassin')
-pkgver=3.22.1
+pkgver=3.23.2
 pkgrel=1
 pkgdesc="Manage your email, contacts and schedule"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ makedepends=(intltool itstool docbook-xsl networkmanager bogofilter spamassassin
 options=('!emptydirs')
 url=https://wiki.gnome.org/Apps/Evolution
 source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-sha256sums=('fa652d830f4185c33666770e6e9cfcc39d5e2f09486bbd63a084f3527064e52e')
+sha256sums=('ae30dad016b53708164858ab559ca10cea30238d872e8a90e0c2c4c99820e5c3')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -22,17 +22,16 @@ prepare() {
 build() {
   cd $pkgbase-$pkgver
 
-  ./configure --prefix=/usr --sysconfdir=/etc \
-      --localstatedir=/var \
-      --libexecdir=/usr/lib \
-      --enable-nss=yes \
-      --with-openldap=yes \
-      --enable-smime=yes \
-      --disable-schemas-compile \
-      --disable-autoar \
-      --enable-gtk-doc
-  
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  cmake -G "Unix Makefiles" 					\
+        -DCMAKE_BUILD_TYPE=Release 				\
+        -DCMAKE_INSTALL_PREFIX=/usr 				\
+	-DSYSCONF_INSTALL_DIR=/etc 				\
+	-DLIBEXEC_INSTALL_DIR=/usr/lib				\
+	-DWITH_NSS=ON						\
+	-DWITH_OPENLDAP=ON					\
+	-DENABLE_SMIME=ON					\
+	-DENABLE_SCHEMAS_COMPILE=OFF				\
+	-DENABLE_GTK_DOC=ON					\
 
   make
 }
