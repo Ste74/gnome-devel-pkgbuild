@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=evolution-data-server
-pkgver=3.22.1
+pkgver=3.23.2
 pkgrel=1
 pkgdesc="Centralized access to appointments and contacts"
 arch=(i686 x86_64)
@@ -12,17 +12,25 @@ install=$pkgname.install
 url="https://wiki.gnome.org/Apps/Evolution"
 license=(GPL)
 source=(http://ftp.gnome.org/pub/gnome/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('5ea1a25c26c2b5587b912661fc0eadf0ef8bc89ec01be9bb23cfffdf30ab41d9')
+sha256sums=('69831a26509f1370c1d52bec3b8c354b5ff88f13f8b5afed57dc1072d295c88a')
 
 build() {
   cd "$pkgname-$pkgver"
-  ./configure --prefix=/usr --sysconfdir=/etc \
-      --localstatedir=/var --with-openldap=yes \
-      --libexecdir=/usr/lib/evolution-data-server \
-      --with-krb5=/usr --with-libdb=/usr --with-phonenumber=/usr \
-      --enable-vala-bindings --disable-uoa \
-      --enable-gtk-doc
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  
+  cmake -G "Unix Makefiles" 					\
+        -DCMAKE_BUILD_TYPE=Release 				\
+        -DCMAKE_INSTALL_PREFIX=/usr 				\
+	-DSYSCONF_INSTALL_DIR=/etc 				\
+	-DWITH_OPENLDAP=ON					\
+	-DLIBEXEC_INSTALL_DIR=/usr/lib/evolution-data-server	\
+	-DWITH_KRB5=ON						\
+	-DWITH_LIBDB=ON						\
+	-DWITH_PHONENUMBER=OFF					\
+	-DENABLE_INTROSPECTION=ON				\
+	-DENABLE_VALA_BINDINGS=ON				\
+	-DENABLE_UOA=OFF 					\
+	-DENABLE_GTK_DOC=ON					\
+
   make
 }
 
