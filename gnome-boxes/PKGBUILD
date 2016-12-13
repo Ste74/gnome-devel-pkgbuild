@@ -3,7 +3,7 @@
 # Contributor: Stefano Facchini <stefano.facchini@gmail.com>
 
 pkgname=gnome-boxes
-pkgver=3.23.2
+pkgver=3.23.3
 pkgrel=1
 pkgdesc="Simple GNOME 3 application to access remote or virtual systems"
 arch=('i686' 'x86_64')
@@ -15,7 +15,7 @@ depends=('clutter-gtk' 'gtk-vnc' 'libarchive' 'libosinfo' 'libsoup' 'libvirt-gli
 makedepends=('gobject-introspection' 'intltool' 'itstool' 'spice-protocol' 'vala')
 install=$pkgname.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver::4}/$pkgname-$pkgver.tar.xz)
-md5sums=('248b1f98df83bba29bedc589ca0a10fa')
+md5sums=('2c6ee7ce3dd64f9c254318425a30e282')
 
 build() {
   cd $pkgname-$pkgver
