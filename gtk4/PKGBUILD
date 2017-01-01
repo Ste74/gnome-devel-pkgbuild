@@ -5,7 +5,7 @@
 pkgbase=gtk4
 pkgname=(gtk4)
 pkgver=3.89.2
-pkgrel=1
+pkgrel=2
 pkgdesc="GObject-based multi-platform GUI toolkit"
 arch=(i686 x86_64)
 url="http://www.gtk.org/"
@@ -49,7 +49,6 @@ build() {
 }
 
 package_gtk4() {
-    depends+=(gtk-update-icon-cache)
     optdepends=('libcanberra: gtk4-widget-factory demo')
     install=gtk4.install
 
@@ -61,6 +60,15 @@ package_gtk4() {
 
     # split this out to use with gtk2 too
 #    rm "$pkgdir/usr/bin/gtk-update-icon-cache"
+    rm "$pkgdir/usr/share/gettext/its/gtkbuilder.its"
+    rm "$pkgdir/usr/share/gettext/its/gtkbuilder.loc"
+    rm "$pkgdir/usr/share/glib-2.0/schemas/org.gtk.Demo.gschema.xml"
+    rm "$pkgdir/usr/share/glib-2.0/schemas/org.gtk.Settings.ColorChooser.gschema.xml"
+    rm "$pkgdir/usr/share/glib-2.0/schemas/org.gtk.Settings.Debug.gschema.xml"
+    rm "$pkgdir/usr/share/glib-2.0/schemas/org.gtk.Settings.FileChooser.gschema.xml"
+    rm "$pkgdir/usr/share/glib-2.0/schemas/org.gtk.exampleapp.gschema.xml"
+
+
 }
 
 #package_gtk-update-icon-cache() {
