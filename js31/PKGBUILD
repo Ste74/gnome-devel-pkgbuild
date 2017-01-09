@@ -1,0 +1,47 @@
+# $Id: PKGBUILD 280669 2016-11-14 07:41:07Z bpiotrowski $
+# Maintainer: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=js31
+pkgver=31.2.0
+pkgrel=1
+pkgdesc="JavaScript interpreter and libraries"
+arch=(i686 x86_64)
+url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/24"
+license=(MPL)
+depends=(nspr gcc-libs readline zlib)
+makedepends=(python2 zip libffi)
+options=(!staticlibs)
+source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.rc0.tar.bz2)
+md5sums=('d1ad39d0451b7231056a07bf1c57acee')
+
+build() {
+  unset CPPFLAGS
+  CXXFLAGS+=' -fno-delete-null-pointer-checks -fpermissive'
+  cd mozjs-$pkgver/js/src
+  ./configure --prefix=/usr \
+	            --with-system-nspr \
+            	--enable-threadsafe \
+            	--enable-readline \
+            	--enable-xterm-updates \
+            	--enable-shared-js \
+            	--enable-gcgenerational \
+            	--enable-optimize \
+            	--with-system-zlib \
+            	--enable-system-ffi \
+            	--with-system-icu \
+            	--without-intl-api  
+
+  make
+}
+
+package() {
+  cd mozjs-$pkgver/js/src
+  make DESTDIR="$pkgdir" install
+  find "$pkgdir"/usr/{lib/pkgconfig,include} -type f -exec chmod -x {} +
+
+  for _symlink in $(find "$pkgdir"/usr/include -type l)
+  do
+    cp --remove-destination $(readlink $_symlink) $_symlink -v
+  done
+}
+# vim:set ts=2 sw=2 et:
