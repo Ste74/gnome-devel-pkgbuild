@@ -3,7 +3,7 @@
 
 pkgname=js31
 pkgver=31.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="JavaScript interpreter and libraries"
 arch=(i686 x86_64)
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/24"
@@ -43,5 +43,7 @@ package() {
   do
     cp --remove-destination $(readlink $_symlink) $_symlink -v
   done
+
+  cp js/src/js-config.h "$pkgdir"/usr/include/mozjs-31/ -v
 }
 # vim:set ts=2 sw=2 et:
