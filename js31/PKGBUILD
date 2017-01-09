@@ -3,7 +3,7 @@
 
 pkgname=js31
 pkgver=31.2.0
-pkgrel=2
+pkgrel=3
 pkgdesc="JavaScript interpreter and libraries"
 arch=(i686 x86_64)
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/24"
@@ -16,7 +16,7 @@ md5sums=('d1ad39d0451b7231056a07bf1c57acee')
 
 build() {
   unset CPPFLAGS
-#  CXXFLAGS+=' -fno-delete-null-pointer-checks -fpermissive'
+  CXXFLAGS+=' -fpermissive'
   cd mozjs-$pkgver/js/src
   ./configure --prefix=/usr \
 	            --with-system-nspr \
