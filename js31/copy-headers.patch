@@ -1,0 +1,18 @@
+Description: Copy headers on install instead of symlinking
+Author: Rico Tzschichholz <ricotz@ubuntu.com>
+Forwarded: no
+Last-Update: 2014-10-29
+
+---
+
+--- a/python/mozbuild/mozbuild/backend/recursivemake.py
++++ b/python/mozbuild/mozbuild/backend/recursivemake.py
+@@ -923,7 +923,7 @@
+             return
+ 
+         def handle_export(source, dest, flags):
+-            self._install_manifests['dist_include'].add_symlink(source, dest)
++            self._install_manifests['dist_include'].add_copy(source, dest)
+ 
+             if not os.path.exists(source):
+                 raise Exception('File listed in EXPORTS does not exist: %s' % source)
