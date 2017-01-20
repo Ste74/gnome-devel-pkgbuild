@@ -3,12 +3,12 @@
 
 pkgname=gjs
 pkgver=1.47.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Javascript Bindings for GNOME"
 arch=(i686 x86_64)
 url="http://live.gnome.org/Gjs"
 license=(GPL)
-depends=(cairo gobject-introspection-runtime 'js>=24.2.0' 'gtk3')
+depends=(cairo gobject-introspection-runtime 'js31' 'gtk3')
 makedepends=('gobject-introspection')
 source=(https://download.gnome.org/sources/gjs/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
 sha256sums=('8189d8277c08f5736213811ccf3fe4d0fe70be47b4b3c5af4b968f02c7f4a917')
