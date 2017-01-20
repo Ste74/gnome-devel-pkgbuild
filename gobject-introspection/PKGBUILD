@@ -4,7 +4,7 @@
 pkgbase=gobject-introspection
 pkgname=('gobject-introspection' 'gobject-introspection-runtime')
 pkgdesc="Introspection system for GObject-based libraries"
-pkgver=1.51.1
+pkgver=1.51.2
 pkgrel=1
 url="https://live.gnome.org/GObjectIntrospection"
 arch=('x86_64' 'i686')
@@ -13,7 +13,7 @@ depends=('python' 'python-mako')
 makedepends=('cairo')
 options=('!emptydirs')
 source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-sha256sums=('2c47e7632df936055b4e96f48315e2d392be10a0642ce11610fba5240e19772d')
+sha256sums=('331dbbe8471d0250d21d1d8c87f4fc3493bfe05008ed660d949b86eac5c0802e')
 
 build() {
   cd $pkgbase-$pkgver
