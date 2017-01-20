@@ -2,34 +2,72 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=js31
-pkgver=31.2.0
-pkgrel=3
+pkgver=31.5.0
+pkgrel=1
 pkgdesc="JavaScript interpreter and libraries"
 arch=(i686 x86_64)
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/24"
 license=(MPL)
-depends=(nspr gcc-libs readline zlib)
+depends=(nspr gcc-libs readline zlib autoconf2.13)
 makedepends=(python2 zip libffi)
 options=(!staticlibs)
-source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.rc0.tar.bz2)
-md5sums=('d1ad39d0451b7231056a07bf1c57acee')
+source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.tar.bz2
+        copy-headers.patch
+        fix-rooting-flag.patch
+        fix-soname.patch
+        install-js-config-h.patch
+        moz1021171.patch
+        moz1037470.patch
+        moz1046176.patch
+        moz1119228.patch
+        shell-version.patch
+)
+md5sums=('b80301403c3e20a2c122b8a0c2c3077e'
+         '706345b9d60870f3f0dc23b0109f5e1e'
+         '509c8f8721d9fd754aea8ce168f584ef'
+         '512e4d224bd533b7ddcbf6c5831dfc9e'
+         '78eef75c2076d1bb1a9ea9d226e30ca0'
+         'c62181a8a67dbcb615b59ba374bee944'
+         '979d57b9690b487fd7c8811bf97bbfdf'
+         'b23fb02f8d93cd0efb5d8d8bddbbfcbb'
+         'a17dd808fbc7a3d462c4ba3df286fcad'
+         'c7b2a89b9bbb30a1048e290b4b85919a')
+
+prepare () {
+  cd mozjs-$pkgver/
+ 
+  patch -p1 -i ../copy-headers.patch
+  patch -p1 -i ../fix-rooting-flag.patch
+  patch -p1 -i ../fix-soname.patch
+  patch -p1 -i ../install-js-config-h.patch
+  patch -p1 -i ../moz1021171.patch
+  patch -p1 -i ../moz1037470.patch
+  patch -p1 -i ../moz1046176.patch
+  patch -p1 -i ../moz1119228.patch
+  patch -p1 -i ../shell-version.patch
+
+  cd js/src
+  autoconf-2.13
+}
 
 build() {
-  unset CPPFLAGS
-  CXXFLAGS+=' -fpermissive'
-  cd mozjs-$pkgver/js/src
-  ./configure --prefix=/usr \
-	            --with-system-nspr \
-            	--enable-threadsafe \
-            	--enable-readline \
-            	--enable-xterm-updates \
-            	--enable-shared-js \
-            	--enable-gcgenerational \
-            	--enable-optimize \
-            	--with-system-zlib \
-            	--enable-system-ffi \
-            	--with-system-icu \
-            	--without-intl-api  
+#  unset CPPFLAGS
+#   CXXFLAGS+=' -fpermissive'
+    CPPFLAGS+=" -O2 -Wno-unused-result"
+#   LDFLAGS+=" -Wl,-z,now"
+
+   cd mozjs-$pkgver/js/src
+
+   ./configure --prefix=/usr \
+		           --with-system-nspr \
+               --disable-tests \
+               --disable-strip \
+		           --enable-ctypes \
+		           --enable-exact-rooting \
+		           --enable-gcgenerational \
+		           --enable-threadsafe \
+		           --enable-system-ffi \
+               --without-intl-api
 
   make
 }
@@ -39,11 +77,11 @@ package() {
   make DESTDIR="$pkgdir" install
   find "$pkgdir"/usr/{lib/pkgconfig,include} -type f -exec chmod -x {} +
 
-  for _symlink in $(find "$pkgdir"/usr/include -type l)
-  do
-    cp --remove-destination $(readlink $_symlink) $_symlink -v
-  done
+#  for _symlink in $(find "$pkgdir"/usr/include -type l)
+#  do
+#    cp --remove-destination $(readlink $_symlink) $_symlink -v
+#  done
 
-  cp js/src/js-config.h "$pkgdir"/usr/include/mozjs-31/ -v
+#  cp js/src/js-config.h "$pkgdir"/usr/include/mozjs-31/ -v
 }
 # vim:set ts=2 sw=2 et:
