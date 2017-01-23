@@ -1,13 +1,13 @@
 # $Id: PKGBUILD 264975 2016-04-14 21:47:58Z heftig $
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
-pkgbase=gtkmm3
+pkgbase=gtkmm4
 _pkgbasename=gtkmm
-pkgname=('gtkmm3' 'gtkmm3-docs')
+pkgname=('gtkmm4' 'gtkmm4-docs')
 pkgver=3.22.0
 pkgrel=1
 arch=('i686' 'x86_64')
-makedepends=('gtk3' 'pangomm' 'atkmm' 'glibmm-docs' 'mm-common' 'doxygen' 'libxslt')
+makedepends=('gtk4' 'pangomm' 'atkmm' 'glibmm-docs' 'mm-common' 'doxygen' 'libxslt')
 license=('LGPL')
 options=('!emptydirs')
 url="http://www.gtkmm.org/"
@@ -21,9 +21,9 @@ build() {
   make
 }
 
-package_gtkmm3() {
-  pkgdesc="C++ bindings for gtk3"
-  depends=('gtk3' 'pangomm' 'atkmm')
+package_gtkmm4() {
+  pkgdesc="C++ bindings for gtk4"
+  depends=('gtk4' 'pangomm' 'atkmm')
   cd "$_pkgbasename-$pkgver"
 
   sed -i -e 's/^doc_subdirs/#doc_subdirs/' Makefile
@@ -31,8 +31,8 @@ package_gtkmm3() {
   make DESTDIR="$pkgdir" install
 }
 
-package_gtkmm3-docs() {
-  pkgdesc="Developer documentation for gtkmm v3"
+package_gtkmm4-docs() {
+  pkgdesc="Developer documentation for gtkmm v4"
 
   cd "$_pkgbasename-$pkgver"
   make -C docs DESTDIR="$pkgdir" install
