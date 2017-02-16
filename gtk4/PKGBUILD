@@ -4,7 +4,7 @@
 
 pkgbase=gtk4
 pkgname=(gtk4)
-pkgver=3.89.3
+pkgver=3.89.4
 pkgrel=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 arch=(i686 x86_64)
@@ -20,7 +20,7 @@ source=(https://git.gnome.org/browse/gtk+/snapshot/gtk+-$pkgver.tar.xz
         gtk-query-immodules-3.0.hook
         gtk-update-icon-cache.hook
         gtk-update-icon-cache.script)
-sha256sums=('09656b86dea7446c7cc4cd63448897c7e93fab772420d5c4e8a45b6e8a666359'
+sha256sums=('b91bcebc34f2d028db9e9d3b9ff5a236129eb22fc41dfaf0de6b495fa4e19fba'
             '01fc1d81dc82c4a052ac6e25bf9a04e7647267cc3017bc91f9ce3e63e5eb9202'
             'de46e5514ff39a7a65e01e485e874775ab1c0ad20b8e94ada43f4a6af1370845'
             '496064a9dd6214bd58f689dd817dbdc4d7f17d42a8c9940a87018c3f829ce308'
