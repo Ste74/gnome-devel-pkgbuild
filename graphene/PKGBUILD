@@ -2,8 +2,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
  
 pkgname=graphene
-pkgver=1.5.2
-pkgrel=3
+pkgver=1.5.4
+pkgrel=1
 pkgdesc="A thin layer of graphic data types"
 url="https://github.com/ebassi/graphene"
 arch=(i686 x86_64)
