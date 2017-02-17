@@ -2,7 +2,7 @@
 #Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=geocode-glib
-pkgver=3.20.1
+pkgver=3.23.90
 pkgrel=1
 pkgdesc="Geocode Helper library"
 arch=(i686 x86_64)
@@ -12,7 +12,7 @@ depends=('glib2' 'json-glib' 'libsoup')
 makedepends=('intltool' 'gobject-introspection')
 options=('!emptydirs')
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('669fc832cabf8cc2f0fc4194a8fa464cdb9c03ebf9aca5353d7cf935ba8637a2')
+sha256sums=('f6b536a3b225ede73ef0592ad841640c5cde2a0e4bf3f416c893e8262b1dd7dc')
 
 build() {
   cd $pkgname-$pkgver
