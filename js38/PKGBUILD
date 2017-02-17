@@ -3,7 +3,7 @@
 
 pkgname=js38
 pkgver=38.2.1.rc0
-pkgrel=1
+pkgrel=2
 pkgdesc="JavaScript interpreter and libraries"
 arch=(i686 x86_64)
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/38"
@@ -13,7 +13,6 @@ makedepends=(python2 zip libffi)
 options=(!staticlibs)
 source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.tar.bz2
         copy-headers.patch
-        fix-rooting-flag.patch
         fix-soname.patch
         install-js-config-h.patch
         shell-version.patch
@@ -25,7 +24,6 @@ source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.tar.bz2
 )
 md5sums=('cb602e21f5fc798b88163a3aa4e03e0a'
          'de1da0735a89cd7c8dca51676500d1e0'
-         '509c8f8721d9fd754aea8ce168f584ef'
          'a03efeb35f02d708dfeef00427d1fbfb'
          '78eef75c2076d1bb1a9ea9d226e30ca0'
          'c7b2a89b9bbb30a1048e290b4b85919a'
@@ -39,11 +37,11 @@ prepare () {
  
   patch -p1 -i ../fix-gcc6-segfault.patch
   patch -p1 -i ../fix-tracelogger.patch
-  patch -p1 -i ../fix-soname.patch
+#  patch -p1 -i ../fix-soname.patch
   patch -p1 -i ../copy-headers.patch
-  patch -p1 -i ../install-js-config-h.patch
-  patch -p1 -i ../shell-version.patch
-  patch -p1 -i ../pkg-config-version.patch
+#  patch -p1 -i ../install-js-config-h.patch
+#  patch -p1 -i ../shell-version.patch
+#  patch -p1 -i ../pkg-config-version.patch
 
   cd js/src
   autoconf-2.13
