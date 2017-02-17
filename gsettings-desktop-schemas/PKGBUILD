@@ -4,7 +4,7 @@
 # Contributor: Adam Hani Schakaki (krzd) <krzd@krzd.net>
 
 pkgname=gsettings-desktop-schemas
-pkgver=3.23.3
+pkgver=3.23.90
 pkgrel=1
 pkgdesc="Shared GSettings schemas for the desktop"
 arch=('any')
@@ -15,7 +15,7 @@ makedepends=('intltool' 'gobject-introspection')
 depends=('dconf')
 install=$pkgname.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('b3652b95508589d83371ef57368ab92b12a5d0276e9a0b253dcebca2f64f8663')
+sha256sums=('bed8a14286f887cd0ce88b9f23e4d8aa3adf78cf6808bda873545e50c5e925a5')
 
 build() {
   cd $pkgname-$pkgver
