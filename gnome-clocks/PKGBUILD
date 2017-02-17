@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-clocks
-pkgver=3.22.1
+pkgver=3.23.90
 pkgrel=1
 pkgdesc="Clocks applications for GNOME"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ makedepends=(intltool vala gobject-introspection itstool)
 groups=(gnome-extra)
 install=gnome-clocks.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-sha256sums=('bee05dd8e7b7c79a3ff6d8505c0ecc3bae16002128ec0e2065dd25aa5e5416af')
+sha256sums=('afcfe94baa4eb400d1fbd372334c350e7bd823f65b2bc796db831937ed2445ea')
 
 build() {
   cd $pkgname-$pkgver
