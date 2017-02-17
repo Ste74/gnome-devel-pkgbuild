@@ -2,7 +2,7 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=at-spi2-core
-pkgver=2.23.4
+pkgver=2.23.90
 pkgrel=1
 pkgdesc="Protocol definitions and daemon for D-Bus at-spi"
 arch=('i686' 'x86_64')
@@ -11,7 +11,7 @@ license=('GPL2')
 depends=('dbus' 'glib2' 'libxtst')
 makedepends=('intltool' 'gobject-introspection')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('6f81c9a74c7abec42ddb85873eace3ea565b9d1f4c1d983ceada79493bbec9e3')
+sha256sums=('e3170c5a5f80223825afdb9440b141543f04f2f7c6931d2f6ba258fd27555183')
 
 build() {
   cd $pkgname-$pkgver
