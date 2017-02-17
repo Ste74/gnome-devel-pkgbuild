@@ -2,7 +2,7 @@
 # Maintainer: Daniel Isenmann <daniel@archlinux.org>
 
 pkgname=babl
-pkgver=0.1.18
+pkgver=0.1.24
 pkgrel=1
 pkgdesc="Dynamic, any to any, pixel format conversion library"
 arch=('i686' 'x86_64')
@@ -12,7 +12,7 @@ depends=('glibc')
 makedepends=('gobject-introspection' 'vala')
 options=('!makeflags')
 source=(http://ftp.gimp.org/pub/babl/${pkgver%.*}/${pkgname}-${pkgver}.tar.bz2)
-md5sums=('400d430e9c39b8795a65eb8a65fbe0af')
+md5sums=('c32245f90a0b59e4714b546308d2ee34')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
