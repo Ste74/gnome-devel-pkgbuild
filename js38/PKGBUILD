@@ -1,12 +1,12 @@
 # $Id: PKGBUILD 280669 2016-11-14 07:41:07Z bpiotrowski $
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
-pkgname=js31
-pkgver=31.5.0
+pkgname=js38
+pkgver=38.2.1.rc0
 pkgrel=1
 pkgdesc="JavaScript interpreter and libraries"
 arch=(i686 x86_64)
-url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/24"
+url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/38"
 license=(MPL)
 depends=(nspr gcc-libs readline zlib autoconf2.13)
 makedepends=(python2 zip libffi)
@@ -16,47 +16,43 @@ source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.tar.bz2
         fix-rooting-flag.patch
         fix-soname.patch
         install-js-config-h.patch
-        moz1021171.patch
-        moz1037470.patch
-        moz1046176.patch
-        moz1119228.patch
         shell-version.patch
+        fix-gcc6-segfault.patch
+        fix-rooting-flag.patch
+        fix-tracelogger.patch
+        pkg-config-version.patch
+
 )
-md5sums=('b80301403c3e20a2c122b8a0c2c3077e'
-         '706345b9d60870f3f0dc23b0109f5e1e'
+md5sums=('cb602e21f5fc798b88163a3aa4e03e0a'
+         'de1da0735a89cd7c8dca51676500d1e0'
          '509c8f8721d9fd754aea8ce168f584ef'
-         '512e4d224bd533b7ddcbf6c5831dfc9e'
+         'a03efeb35f02d708dfeef00427d1fbfb'
          '78eef75c2076d1bb1a9ea9d226e30ca0'
-         'c62181a8a67dbcb615b59ba374bee944'
-         '979d57b9690b487fd7c8811bf97bbfdf'
-         'b23fb02f8d93cd0efb5d8d8bddbbfcbb'
-         'a17dd808fbc7a3d462c4ba3df286fcad'
-         'c7b2a89b9bbb30a1048e290b4b85919a')
+         'c7b2a89b9bbb30a1048e290b4b85919a'
+         '838bc1d62ba57dbb7ebd697047a77ab7'
+         '509c8f8721d9fd754aea8ce168f584ef'
+         'ee10453cd3f64db2a63788bc64cdb276'
+         '19f83f41bc6df2ffe64366d54608ebda')
 
 prepare () {
-  cd mozjs-$pkgver/
+  cd mozjs-38.0.0/
  
-  patch -p1 -i ../copy-headers.patch
-  patch -p1 -i ../fix-rooting-flag.patch
+  patch -p1 -i ../fix-gcc6-segfault.patch
+  patch -p1 -i ../fix-tracelogger.patch
   patch -p1 -i ../fix-soname.patch
+  patch -p1 -i ../copy-headers.patch
   patch -p1 -i ../install-js-config-h.patch
-  patch -p1 -i ../moz1021171.patch
-  patch -p1 -i ../moz1037470.patch
-  patch -p1 -i ../moz1046176.patch
-  patch -p1 -i ../moz1119228.patch
   patch -p1 -i ../shell-version.patch
+  patch -p1 -i ../pkg-config-version.patch
 
   cd js/src
   autoconf-2.13
 }
 
 build() {
-#  unset CPPFLAGS
-#   CXXFLAGS+=' -fpermissive'
     CPPFLAGS+=" -O2 -Wno-unused-result"
-#   LDFLAGS+=" -Wl,-z,now"
 
-   cd mozjs-$pkgver/js/src
+   cd mozjs-38.0.0/js/src
 
    ./configure --prefix=/usr \
 		           --with-system-nspr \
@@ -73,15 +69,8 @@ build() {
 }
 
 package() {
-  cd mozjs-$pkgver/js/src
+  cd mozjs-38.0.0/js/src
   make DESTDIR="$pkgdir" install
   find "$pkgdir"/usr/{lib/pkgconfig,include} -type f -exec chmod -x {} +
-
-#  for _symlink in $(find "$pkgdir"/usr/include -type l)
-#  do
-#    cp --remove-destination $(readlink $_symlink) $_symlink -v
-#  done
-
-#  cp js/src/js-config.h "$pkgdir"/usr/include/mozjs-31/ -v
 }
 # vim:set ts=2 sw=2 et:
