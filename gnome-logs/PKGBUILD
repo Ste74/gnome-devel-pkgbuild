@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-logs
-pkgver=3.23.4
+pkgver=3.23.90
 pkgrel=1
 pkgdesc="A log viewer for the systemd journal"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ depends=(systemd gtk3 gsettings-desktop-schemas)
 makedepends=(intltool itstool)
 install=gnome-logs.install
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('7afe63f7e4277b8916bd4222622cdd8d584e943fe309dc87c3a01f5dd72f19a4')
+sha256sums=('9a99371f9362aeed849d728f004926c307ef02312f179726ee3f0602a8a1a9b1')
 
 build() {
   cd $pkgname-$pkgver
