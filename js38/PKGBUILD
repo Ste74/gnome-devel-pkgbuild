@@ -3,7 +3,7 @@
 
 pkgname=js38
 pkgver=38.2.1.rc0
-pkgrel=2
+pkgrel=3
 pkgdesc="JavaScript interpreter and libraries"
 arch=(i686 x86_64)
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/38"
@@ -37,13 +37,16 @@ prepare () {
  
   patch -p1 -i ../fix-gcc6-segfault.patch
   patch -p1 -i ../fix-tracelogger.patch
-#  patch -p1 -i ../fix-soname.patch
+  patch -p1 -i ../fix-soname.patch
   patch -p1 -i ../copy-headers.patch
-#  patch -p1 -i ../install-js-config-h.patch
-#  patch -p1 -i ../shell-version.patch
-#  patch -p1 -i ../pkg-config-version.patch
+  patch -p1 -i ../install-js-config-h.patch
+  patch -p1 -i ../shell-version.patch
+  patch -p1 -i ../pkg-config-version.patch
+
+  chmod +x python/mozbuild/mozbuild/milestone.py
 
   cd js/src
+
   autoconf-2.13
 }
 
@@ -70,5 +73,22 @@ package() {
   cd mozjs-38.0.0/js/src
   make DESTDIR="$pkgdir" install
   find "$pkgdir"/usr/{lib/pkgconfig,include} -type f -exec chmod -x {} +
+
+  ## fix names
+  mv $pkgdir/usr/lib/pkgconfig/mozjs-{,38}.pc 
+  mv $pkgdir/usr/lib/libmozjs-{,38}.so
+
+  mv $pkgdir/usr/include/mozjs-{,38}
+
+  mv $pkgdir/usr/bin/js{,38}-config
+  mv $pkgdir/usr/bin/js{,38}
+
+  ## remove static
+  rm $pkgdir/usr/lib/libjs_static.ajs
+
+  ## fix .pc file
+  sed 's/SpiderMonkey /SpiderMonkey 38.2.1/g' $pkgdir/usr/lib/pkgconfig/mozjs-38.pc
+  sed 's/Version: /Version: 38.2.1/g' $pkgdir/usr/lib/pkgconfig/mozjs-38.pc
+  sed 's/mozjs-/mozjs-38/g' $pkgdir/usr/lib/pkgconfig/mozjs-38.pc 
 }
 # vim:set ts=2 sw=2 et:
