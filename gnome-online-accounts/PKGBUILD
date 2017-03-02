@@ -2,7 +2,7 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gnome-online-accounts
-pkgver=3.23.90
+pkgver=3.23.91
 pkgrel=1
 pkgdesc="GNOME service to access online accounts"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ optdepends=('gvfs-goa: Virtual file systems (e.g. OwnCloud)'
             'gvfs-google: Google Drive')
 install=$pkgname.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('07d52d0f81c6984b8b5c8424f537128ac33ce8aeac5dcde8245c61e3b1d09f80')
+sha256sums=('9b1c22bb8a86d7bab2340cd3414df2648a6e53793ff24e0dd22f925ebb9adc18')
 
 build() {
   cd $pkgname-$pkgver
