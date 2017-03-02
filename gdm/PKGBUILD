@@ -4,7 +4,7 @@
 
 pkgbase=gdm
 pkgname=(gdm libgdm)
-pkgver=3.23.4
+pkgver=3.23.91
 pkgrel=1
 pkgdesc="Gnome Display Manager"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ makedepends=(itstool intltool yelp-tools gobject-introspection)
 checkdepends=('check')
 source=(https://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz
         0002-Xsession-Don-t-start-ssh-agent-by-default.patch)
-sha256sums=('04643c6ffc659863d600d82aeffd57a4996e92ff39b327f4c9b8e6eab2ba7ed8'
+sha256sums=('09ac8f98cd23158200d0c334ba508a4c618bb9aaa0799da5fca5e4778e0c61c8'
             '9449da0b6ee58aa3fde65e6d8d1f30513e4176a7dc6d176f17f320ce82cb1d82')
 
 prepare() {
