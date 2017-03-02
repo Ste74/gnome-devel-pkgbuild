@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-mines
-pkgver=3.23.2
+pkgver=3.23.91
 pkgrel=1
 pkgdesc="Clear hidden mines from a minefield"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ install=gnome-mines.install
 url="https://wiki.gnome.org/Apps/Mines"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('71d2d79ab30ff9f76db7870ff3ab2dc310460be6b96716160ae89b7b52d11aca')
+sha256sums=('5253680a098be8455c15edcc1d6b1d50b5c1419498baa79f51db4334e2abacae')
 
 build() {
   cd $pkgname-$pkgver
