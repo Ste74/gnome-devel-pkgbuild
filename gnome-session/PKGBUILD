@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-session
-pkgver=3.23.4.1
+pkgver=3.23.91
 pkgrel=1
 pkgdesc="The GNOME Session Handler"
 arch=(i686 x86_64)
@@ -17,7 +17,7 @@ groups=(gnome)
 source=(https://git.gnome.org/browse/$pkgname/snapshot/$pkgname-$pkgver.tar.xz
 #	http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
         timeout.patch)
-sha256sums=('04114cbaf0a91c1705e70a0e6e9ae5f1f6bccca33fcecb9a011eeebd7d1008f1'
+sha256sums=('8729b08d9fa06a9f2a16740c7c0dd43c1f29aad0a7a28be119f91ad2dc442337'
             '9eaf31857b41db417475c3b14adc11b10c8226ed76978cdf96dd648fa6e505fc')
 
 prepare() {
