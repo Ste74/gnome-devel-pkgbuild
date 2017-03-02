@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-calendar
-pkgver=3.23.90
+pkgver=3.23.91.1
 pkgrel=1
 pkgdesc="Simple and beautiful calendar application designed to perfectly fit the GNOME desktop"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ makedepends=('intltool' 'python')
 install=gnome-calendar.install
 groups=('gnome-extra')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('9617359f5021b4c4dcb4fe13252c939e7ba70faf96474f0312c4bf14cfd0d61f')
+sha256sums=('b9f9a1bb8e747243c97778b3fd85cf0e9d16593159802a9467b4ca7a1dbb338d')
 
 build() {
   cd $pkgname-$pkgver
