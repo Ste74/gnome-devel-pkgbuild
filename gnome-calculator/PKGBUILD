@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-calculator
-pkgver=3.23.90
+pkgver=3.23.91
 pkgrel=1
 pkgdesc="GNOME Scientific calculator"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ options=(!emptydirs)
 url="http://www.gnome.org"
 install=gnome-calculator.install
 source=(https://download.gnome.org/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-sha256sums=('bc0a4340d5d9d737b622235a091a732a85d727188fd22ec0311eaa7da2058ad8')
+sha256sums=('c38df51ba9335dc9f6e9c15db747312d8dc5b45f6e28b30c500961499bd3484e')
 
 build() {
   cd $pkgname-$pkgver
