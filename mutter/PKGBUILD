@@ -5,7 +5,7 @@
 
 pkgname=mutter
 pkgver=3.23.91
-pkgrel=1
+pkgrel=2
 pkgdesc="A window manager for GNOME"
 arch=(i686 x86_64)
 license=('GPL')
@@ -17,8 +17,16 @@ url="http://www.gnome.org"
 groups=('gnome')
 options=('!emptydirs')
 install=mutter.install
-source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('52ad3f90670064adb43c7ef09001aeec7900a8ed330331978812212101071914')
+source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
+        fix-screenshot.patch)
+sha256sums=('52ad3f90670064adb43c7ef09001aeec7900a8ed330331978812212101071914'
+            '306daa04d44775fef16f65777e1fa8fbd87ebb56ce67aecc5d9774a38485079d')
+
+prepare () {
+  cd "$pkgname-$pkgver"
+ 
+  patch -p1 -i ../fix-screenshot.patch
+}
 
 build() {
   cd "$pkgname-$pkgver"
