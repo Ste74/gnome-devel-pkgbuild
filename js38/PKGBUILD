@@ -3,13 +3,13 @@
 
 pkgname=js38
 pkgver=38.2.1.rc0
-pkgrel=1
+pkgrel=5
 pkgdesc="JavaScript interpreter and libraries"
 arch=(i686 x86_64)
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Releases/38"
 license=(MPL)
-depends=(nspr gcc-libs readline zlib autoconf2.13)
-makedepends=(python2 zip libffi)
+depends=(nspr gcc-libs readline zlib icu)
+makedepends=(python2 zip libffi autoconf2.13)
 options=(!staticlibs)
 source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.tar.bz2
         copy-headers.patch
@@ -20,7 +20,7 @@ source=(https://people.mozilla.org/~sstangl/mozjs-$pkgver.tar.bz2
         fix-rooting-flag.patch
         fix-tracelogger.patch
         pkg-config-version.patch
-
+        fix-sed-syntax.patch
 )
 md5sums=('cb602e21f5fc798b88163a3aa4e03e0a'
          'de1da0735a89cd7c8dca51676500d1e0'
@@ -30,7 +30,8 @@ md5sums=('cb602e21f5fc798b88163a3aa4e03e0a'
          '838bc1d62ba57dbb7ebd697047a77ab7'
          '509c8f8721d9fd754aea8ce168f584ef'
          'ee10453cd3f64db2a63788bc64cdb276'
-         '19f83f41bc6df2ffe64366d54608ebda')
+         '19f83f41bc6df2ffe64366d54608ebda'
+         '58b0e277cdae2941fd61deb97d8c816e')
 
 prepare () {
   cd mozjs-38.0.0/
@@ -42,6 +43,7 @@ prepare () {
   patch -p1 -i ../install-js-config-h.patch
   patch -p1 -i ../shell-version.patch
   patch -p1 -i ../pkg-config-version.patch
+  patch -p1 -i ../fix-sed-syntax.patch
 
   chmod +x python/mozbuild/mozbuild/milestone.py
 
@@ -64,7 +66,7 @@ build() {
 		           --enable-gcgenerational \
 		           --enable-threadsafe \
 		           --enable-system-ffi \
-               --without-intl-api
+               --with-intl-api
 
   make
 }
