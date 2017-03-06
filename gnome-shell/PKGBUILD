@@ -4,7 +4,7 @@
 
 pkgname=gnome-shell
 pkgver=3.23.91
-pkgrel=1
+pkgrel=2
 pkgdesc="The next generation GNOME Shell"
 arch=(i686 x86_64)
 url="https://wiki.gnome.org/Projects/GnomeShell"
@@ -19,9 +19,11 @@ optdepends=('gnome-control-center: System settings'
 install=gnome-shell.install
 groups=(gnome)
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
-        nm-libexecdir.patch)
+        nm-libexecdir.patch
+	fix-typos.patch)
 sha256sums=('52401ecb15d7979ba7ed328181698c8b84f008094ad2883fcd2244a0140fb15e'
-            'e5bb10ad2e5c3e0fde3d05babd1bfdda701e553e02d493f7e54cb7832ce7e607')
+            'e5bb10ad2e5c3e0fde3d05babd1bfdda701e553e02d493f7e54cb7832ce7e607'
+            'bc2958f6f239aafbd5a20a4a32845d768683c6f830781008df91eae2968b2eb7')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -29,6 +31,7 @@ prepare() {
   # FS#30747 FS#32730 Problems due to libexecdir different from NM
   patch -Np1 -i ../nm-libexecdir.patch
 
+  patch -Np1 -i ../fix-typos.patch
 }
 
 build() {
