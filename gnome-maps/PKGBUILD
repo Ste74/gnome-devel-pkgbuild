@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-maps
-pkgver=3.23.91
+pkgver=3.23.92
 pkgrel=1
 pkgdesc="A simple GNOME 3 maps application"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ makedepends=(intltool gobject-introspection)
 groups=('gnome-extra')
 install=gnome-maps.install
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('4ee39bc7c569b8dac642f8b48e24b68c8f724befde79f3d8353fbfc1446bbca9')
+sha256sums=('f2118e2243011ffa945b8f4bc9e809af2abe613f32c3d851f20ae17fd958ddd5')
 
 build() {
   cd $pkgname-$pkgver
