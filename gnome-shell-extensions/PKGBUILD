@@ -3,7 +3,7 @@
 
 pkgname=gnome-shell-extensions
 pkgver=3.23.92
-pkgrel=1
+pkgrel=2
 pkgdesc="Extensions for GNOME shell, including classic mode"
 arch=(any)
 url="https://wiki.gnome.org/Projects/GnomeShell/Extensions"
