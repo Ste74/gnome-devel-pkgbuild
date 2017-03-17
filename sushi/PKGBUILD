@@ -2,7 +2,7 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=sushi
-pkgver=3.21.91
+pkgver=3.23.91
 pkgrel=1
 pkgdesc="A quick previewer for Nautilus"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ optdepends=('unoconv: OpenDocument formats')
 install=sushi.install
 makedepends=('intltool' 'gobject-introspection')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('db71c9ec3dd2dde6aed03b469253ce7d9f30c60ff50c2a8dc9f7776b70d15d55')
+sha256sums=('ed822ef5b989da61830af6d23e4e5e42b1fd405e098221794f70857bfa558e2a')
 
 prepare() {
   cd "$pkgname-$pkgver"
