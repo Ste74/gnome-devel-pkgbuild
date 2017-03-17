@@ -4,7 +4,7 @@
 
 pkgname=gnome-nibbles
 pkgver=3.23.92
-pkgrel=1
+pkgrel=2
 pkgdesc="Guide a worm around a maze"
 arch=('i686' 'x86_64')
 license=('GPL')
