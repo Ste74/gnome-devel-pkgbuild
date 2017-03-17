@@ -3,7 +3,7 @@
 
 pkgname=gnome-maps
 pkgver=3.23.92
-pkgrel=1
+pkgrel=2
 pkgdesc="A simple GNOME 3 maps application"
 arch=(i686 x86_64)
 license=('GPL')
