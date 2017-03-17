@@ -4,7 +4,7 @@
 
 pkgname=vala
 pkgver=0.35.90
-pkgrel=1
+pkgrel=2
 pkgdesc="Compiler for the GObject type system"
 arch=('i686' 'x86_64')
 url="https://wiki.gnome.org/Projects/Vala"
