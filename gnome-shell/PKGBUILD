@@ -19,8 +19,7 @@ optdepends=('gnome-control-center: System settings'
 install=gnome-shell.install
 groups=(gnome)
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz
-        nm-libexecdir.patch
-	fix-typos.patch)
+        nm-libexecdir.patch)
 sha256sums=('52401ecb15d7979ba7ed328181698c8b84f008094ad2883fcd2244a0140fb15e'
             'e5bb10ad2e5c3e0fde3d05babd1bfdda701e553e02d493f7e54cb7832ce7e607'
             'bc2958f6f239aafbd5a20a4a32845d768683c6f830781008df91eae2968b2eb7')
@@ -31,7 +30,6 @@ prepare() {
   # FS#30747 FS#32730 Problems due to libexecdir different from NM
   patch -Np1 -i ../nm-libexecdir.patch
 
-  patch -Np1 -i ../fix-typos.patch
 }
 
 build() {
