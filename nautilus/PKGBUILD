@@ -3,7 +3,7 @@
 
 pkgbase=nautilus
 pkgname=(nautilus libnautilus-extension)
-pkgver=3.23.90
+pkgver=3.23.91
 pkgrel=1
 pkgdesc="GNOME file manager"
 arch=(i686 x86_64)
@@ -14,7 +14,7 @@ makedepends=(intltool gobject-introspection python packagekit python2)
 url="http://www.gnome.org"
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-sha256sums=('58813d03798ba95e37b8a2f7d11d752fa75bd8e779c6fa0148c4896a5e6e744a')
+sha256sums=('062d973d45059a15b96b5d2d248c55aa4c13961307d43cb93f20bc9691be85d6')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -22,7 +22,7 @@ prepare() {
 
 build() {
   cd $pkgbase-$pkgver
-  ./configure --prefix=/usr --sysconfdir=/etc \
+  ./autogen.sh --prefix=/usr --sysconfdir=/etc \
       --localstatedir=/var --disable-static \
       --libexecdir=/usr/lib/nautilus \
       --disable-update-mimedb \
@@ -45,7 +45,7 @@ package_nautilus() {
   mv "$pkgdir"/usr/include n-e/usr
   mv "$pkgdir"/usr/lib/{girepository-1.0,pkgconfig} n-e/usr/lib
   mv "$pkgdir"/usr/lib/libnautilus-extension.so* n-e/usr/lib
-  mv "$pkgdir"/usr/share/{gir-1.0,gtk-doc} n-e/usr/share
+  mv "$pkgdir"/usr/share/gir-1.0 n-e/usr/share
 }
 
 package_libnautilus-extension() {
