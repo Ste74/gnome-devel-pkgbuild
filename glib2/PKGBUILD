@@ -9,7 +9,6 @@ pkgdesc="Common C routines used by GTK+ and other libs"
 url="http://www.gtk.org/"
 arch=(i686 x86_64)
 makedepends=('pkg-config' 'python' 'libxslt' 'docbook-xml' 'pcre' 'libffi' 'libelf')
-depends=('libutil-linux')
 source=(http://ftp.gnome.org/pub/GNOME/sources/glib/${pkgver:0:4}/glib-$pkgver.tar.xz
         glib-compile-schemes.hook
         gio-querymodules.hook
@@ -39,7 +38,7 @@ check() {
 }
 
 package_glib2() {
-  depends=('pcre' 'libffi')
+  depends=('pcre' 'libffi' 'libutil-linux')
   optdepends=('python: for gdbus-codegen and gtester-report'
               'libelf: gresource inspection tool')
   options=('!docs' '!emptydirs')
