@@ -4,7 +4,7 @@
 
 pkgname=file-roller
 pkgver=3.23.92
-pkgrel=1
+pkgrel=2
 pkgdesc="Create and modify archives"
 arch=('i686' 'x86_64')
 license=('GPL')
