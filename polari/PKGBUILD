@@ -3,7 +3,7 @@
 
 pkgname=polari
 pkgver=3.23.92
-pkgrel=1
+pkgrel=2
 pkgdesc="An IRC Client for GNOME"
 arch=(i686 x86_64)
 license=(GPL)
