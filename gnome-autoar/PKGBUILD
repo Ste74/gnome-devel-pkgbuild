@@ -1,6 +1,6 @@
 pkgname=gnome-autoar
 pkgver=0.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Automatic archives creating and extracting library"
 arch=('i686' 'x86_64')
 license=(GPL)
