@@ -4,7 +4,7 @@
 
 pkgname=gnome-disk-utility
 pkgver=3.23.92
-pkgrel=1
+pkgrel=2
 pkgdesc="Disk Management Utility for GNOME"
 arch=(i686 x86_64)
 license=(GPL)
