@@ -4,7 +4,7 @@
 
 pkgname=gnome-chess
 pkgver=3.23.92.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Play the classic two-player boardgame of chess"
 arch=('i686' 'x86_64')
 license=('GPL')
