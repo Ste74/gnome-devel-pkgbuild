@@ -4,7 +4,7 @@
 pkgname=gtksourceview3
 _pkgbasename=gtksourceview
 pkgver=3.23.91
-pkgrel=1
+pkgrel=2
 pkgdesc="A text widget adding syntax highlighting and more to GNOME"
 arch=('i686' 'x86_64')
 license=('GPL')
