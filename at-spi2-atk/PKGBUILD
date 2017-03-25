@@ -2,7 +2,7 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=at-spi2-atk
-pkgver=2.22.0
+pkgver=2.24.0
 pkgrel=1
 pkgdesc="A GTK+ module that bridges ATK to D-Bus at-spi"
 arch=('i686' 'x86_64')
@@ -11,7 +11,7 @@ license=('GPL2')
 depends=('at-spi2-core' 'libx11' 'atk')
 makedepends=('intltool')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('e8bdedbeb873eb229eb08c88e11d07713ec25ae175251648ad1a9da6c21113c1')
+sha256sums=('022d68497c05cc65ba7cd2b166132de9a160c8d90e9200b5faa473ef7e784c61')
 
 build() {
   cd $pkgname-$pkgver
