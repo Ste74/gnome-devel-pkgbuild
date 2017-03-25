@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=zenity
-pkgver=3.22.0
+pkgver=3.24.0
 pkgrel=1
 pkgdesc="Display graphical dialog boxes from shell scripts"
 arch=(i686 x86_64)
@@ -11,7 +11,7 @@ depends=(webkit2gtk libnotify)
 makedepends=(itstool yelp-tools gettext)
 url="http://www.gnome.org"
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('1ecdfa1071d383b373b8135954b3ec38d402d671dcd528e69d144aff36a0e466')
+sha256sums=('6ff0a026ec94e5bc1b30f78df91e54f4f82fd982f4c29b52fe5dacc886a9f7f7')
 
 build() {
   cd $pkgname-$pkgver
