@@ -2,8 +2,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-color-manager
-pkgver=3.23.92
-pkgrel=2
+pkgver=3.24.0
+pkgrel=1
 pkgdesc="Color profile manager for the GNOME desktop"
 arch=(i686 x86_64)
 url="http://projects.gnome.org/gnome-color-manager/"
@@ -15,7 +15,7 @@ install=gnome-color-manager.install
 options=('!emptydirs')
 groups=('gnome-extra')
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('5d76e7b4e367bc5c9fb9add8bbae487956ea7d31f060a23c7835b3cd10614f16')
+sha256sums=('a1009e6287d97b8d1fdd6e44a4c8668bcf05f1bb7f2186243318e54c6d061dd2')
 
 prepare(){
   cd $pkgname-$pkgver
