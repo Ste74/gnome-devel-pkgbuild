@@ -4,8 +4,8 @@
 # Contributor: Link Dupont <link@subpop.net>
 
 pkgname=devhelp
-pkgver=3.23.92
-pkgrel=2
+pkgver=3.24.0
+pkgrel=1
 pkgdesc="API documentation browser for GNOME"
 arch=(i686 x86_64)
 license=(GPL)
@@ -16,7 +16,7 @@ options=('!emptydirs')
 install=devhelp.install
 groups=('gnome-extra')
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('1c74626246c2e45584f381f90ec154c08a615aa8aef0974bd9d8c89cb2715003')
+sha256sums=('4858de1c815532ad160d1bf9facd28859972e3a052908a8edf73f866c8cce430')
 
 build() {
   cd $pkgname-$pkgver
