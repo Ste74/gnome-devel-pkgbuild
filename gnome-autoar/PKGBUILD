@@ -1,13 +1,13 @@
 pkgname=gnome-autoar
-pkgver=0.2.1
-pkgrel=2
+pkgver=0.2.2
+pkgrel=1
 pkgdesc="Automatic archives creating and extracting library"
 arch=('i686' 'x86_64')
 license=(GPL)
 depends=('glib2' 'gtk3' 'libarchive' 'gnome-common')
 url="http://www.gnome.org"
 source=(https://git.gnome.org/browse/gnome-autoar/snapshot/$pkgname-$pkgver.tar.xz)
-sha256sums=('f6810bc9c30b496b1264dbc603e3227f34763ff4458476161922bb28cdf551ae')
+sha256sums=('068d0066418affc10288d554cab8ac4fde81960cc197d167450474475aadc86d')
 
 prepare() {
   cd $pkgname-$pkgver
