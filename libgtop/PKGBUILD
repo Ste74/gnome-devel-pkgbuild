@@ -2,8 +2,8 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=libgtop
-pkgver=2.35.92
-pkgrel=2
+pkgver=2.36.0
+pkgrel=1
 pkgdesc="A library that reads information about processes and the running system"
 arch=('i686' 'x86_64')
 license=('LGPL')
@@ -12,7 +12,7 @@ makedepends=('intltool' 'gobject-introspection')
 install=libgtop.install
 source=(https://download.gnome.org/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
 url="http://www.gnome.org/"
-sha256sums=('0908b014ff34df648f696e8cc9e0c3a21c569fc38f4f2814e726af9812f923e1')
+sha256sums=('13bfe34c150b2b00b03df4732e8c7ccfae09ab15897ee4f4ebf0d16b0f3ba12b')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
