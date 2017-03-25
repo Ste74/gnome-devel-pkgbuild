@@ -3,8 +3,8 @@
 
 pkgname=gtksourceview3
 _pkgbasename=gtksourceview
-pkgver=3.23.91
-pkgrel=2
+pkgver=3.99.3
+pkgrel=1
 pkgdesc="A text widget adding syntax highlighting and more to GNOME"
 arch=('i686' 'x86_64')
 license=('GPL')
@@ -12,7 +12,7 @@ depends=('gtk3' 'libxml2')
 makedepends=('intltool' 'gobject-introspection' 'glade' 'vala')
 url="http://www.gnome.org"
 source=(https://download.gnome.org/sources/$_pkgbasename/${pkgver:0:4}/$_pkgbasename-$pkgver.tar.xz)
-sha256sums=('a4c07be07ec0e6dc90ef6a1e6eeafbb1aef21c866c25bd8a4e5ba67d950eb996')
+sha256sums=('57f25de7de49afd69a7e763dfc270973658f5883b1da214cfb9015f0daca4038')
 
 build() {
   cd "$_pkgbasename-$pkgver"
