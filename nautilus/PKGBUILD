@@ -3,8 +3,8 @@
 
 pkgbase=nautilus
 pkgname=(nautilus libnautilus-extension)
-pkgver=3.23.91
-pkgrel=2
+pkgver=3.24.0
+pkgrel=1
 pkgdesc="GNOME file manager"
 arch=(i686 x86_64)
 license=(GPL)
@@ -14,7 +14,7 @@ makedepends=(intltool gobject-introspection python packagekit python2)
 url="http://www.gnome.org"
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$pkgbase/${pkgver:0:4}/$pkgbase-$pkgver.tar.xz)
-sha256sums=('062d973d45059a15b96b5d2d248c55aa4c13961307d43cb93f20bc9691be85d6')
+sha256sums=('8a499247caff3c02437c0ad955f043e675a056912d8553d9c9783c762f5dbbbd')
 
 prepare() {
   cd $pkgname-$pkgver
@@ -22,7 +22,7 @@ prepare() {
 
 build() {
   cd $pkgbase-$pkgver
-  ./autogen.sh --prefix=/usr --sysconfdir=/etc \
+  ./configure --prefix=/usr --sysconfdir=/etc \
       --localstatedir=/var --disable-static \
       --libexecdir=/usr/lib/nautilus \
       --disable-update-mimedb \
