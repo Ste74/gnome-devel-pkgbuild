@@ -2,7 +2,7 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gnome-dictionary
-pkgver=3.20.0
+pkgver=3.24.0
 pkgrel=1
 pkgdesc="Look up words in dictionary sources"
 arch=(i686 x86_64)
@@ -13,7 +13,7 @@ makedepends=('intltool' 'itstool' 'docbook-xsl')
 install=gnome-dictionary.install
 groups=('gnome')
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('efb36377d46eff9291d3b8fec37baab2355f9dc8bc7edb791b6a625574716121')
+sha256sums=('41e7064a0cfab18e881a95ce9f1712ee5c9f426904b16f3bc04c35ebd1bbd9f2')
 
 build() {
   cd $pkgname-$pkgver
