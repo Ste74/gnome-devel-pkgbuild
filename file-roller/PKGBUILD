@@ -3,8 +3,8 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=file-roller
-pkgver=3.23.92
-pkgrel=2
+pkgver=3.24.0
+pkgrel=1
 pkgdesc="Create and modify archives"
 arch=('i686' 'x86_64')
 license=('GPL')
@@ -19,7 +19,7 @@ options=('!emptydirs')
 install=file-roller.install
 url="http://www.gnome.org"
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('2991d359fe8a9e9018a60d3f96d72cc5ddd3062a161885d0c5d8de427485bb83')
+sha256sums=('f4b72dba69b1984d96a1a9a6c544a9f94e54a531612b299251ef2702e0b0ad21')
 
 build() {
   cd $pkgname-$pkgver
