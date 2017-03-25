@@ -2,8 +2,8 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=atk
-pkgver=2.23.4
-pkgrel=2
+pkgver=2.24.0
+pkgrel=1
 pkgdesc="A library providing a set of interfaces for accessibility"
 arch=(i686 x86_64)
 license=('LGPL')
@@ -11,7 +11,7 @@ depends=('glib2')
 makedepends=('gobject-introspection')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
 url='https://developer.gnome.org/atk/'
-sha256sums=('6888f4e902fc4727b1687ff512d5d087050f4c0d11035566484988cf698c2c1a')
+sha256sums=('bb2daa9a808c73a7a79d2983f333e0ba74be42fc51e3ba1faf2551a636487a49')
 
 build() {
   cd "$pkgname-$pkgver"
