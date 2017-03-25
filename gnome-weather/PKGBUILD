@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-weather
-pkgver=3.20.0
+pkgver=3.24.0
 pkgrel=1
 pkgdesc="Access current weather conditions and forecasts"
 arch=(any)
@@ -13,7 +13,7 @@ makedepends=(intltool gobject-introspection)
 groups=(gnome-extra)
 install=gnome-weather.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/${pkgver:0:4}/${pkgname}-${pkgver}.tar.xz)
-sha256sums=('3d56c59715656c9031b42f4803ee22776a954cd0587f465590ea0f43cec5b46a')
+sha256sums=('e36847884670e59a71ac70ed982fc8f2fb70f1766c3a24f10a0cd38c9b66d574')
 
 build() {
   cd $pkgname-$pkgver
