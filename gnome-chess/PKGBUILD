@@ -3,8 +3,8 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-chess
-pkgver=3.23.92.5
-pkgrel=2
+pkgver=3.24.0
+pkgrel=1
 pkgdesc="Play the classic two-player boardgame of chess"
 arch=('i686' 'x86_64')
 license=('GPL')
@@ -18,7 +18,7 @@ install=gnome-chess.install
 url="https://wiki.gnome.org/Apps/Chess"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('f3cf5a7f02fa23c5707c5498a4768fe3dbddd5208fa6d6f34c0482b46bdc930b')
+sha256sums=('d04603a25ae7fd32b181152e4f8e0e488f4e7a95f2b562f3029bc07d90d4da14')
 
 build() {
   cd $pkgname-$pkgver
