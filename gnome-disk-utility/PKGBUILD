@@ -3,8 +3,8 @@
 # Contributor: Silvio Knizek (killermoehre)
 
 pkgname=gnome-disk-utility
-pkgver=3.23.92
-pkgrel=2
+pkgver=3.24.0
+pkgrel=1
 pkgdesc="Disk Management Utility for GNOME"
 arch=(i686 x86_64)
 license=(GPL)
@@ -15,7 +15,7 @@ makedepends=(intltool docbook-xsl gnome-settings-daemon)
 options=('!emptydirs')
 install=gnome-disk-utility.install
 source=(http://ftp.gnome.org/pub/GNOME/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('b432504fe7b4b1e5e3789f3856ffb39c555c8c98b9512215662d22e834cf4777')
+sha256sums=('c5f8b1d8aad3136353e4ad4f33c7635bcb563b1adce59d3338202e260a7f3cf3')
 
 build() {
   cd $pkgname-$pkgver
