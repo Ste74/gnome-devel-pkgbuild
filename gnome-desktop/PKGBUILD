@@ -2,7 +2,7 @@
 # Maintainer:  Jan de Groot <jan@archlinux.org>
 
 pkgname=gnome-desktop
-pkgver=3.22.0
+pkgver=3.24.0
 pkgrel=1
 epoch=1
 pkgdesc="Library with common API for various GNOME modules"
@@ -13,7 +13,7 @@ makedepends=(intltool gobject-introspection itstool)
 url="http://www.gnome.org"
 groups=(gnome)
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('cff36ccd8d0a62177a4c1513ec70d13ead3b84fdc208ba54199cf7616f05644d')
+sha256sums=('86387aa12ba789afc0772d49fdfbab2d815669552e895be089252dd42aa68677')
 
 build() {
   cd $pkgname-$pkgver
