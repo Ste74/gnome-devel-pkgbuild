@@ -3,8 +3,8 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-sudoku
-pkgver=3.23.92.1
-pkgrel=2
+pkgver=3.24.0
+pkgrel=1
 pkgdesc="Test your logic skills in this number grid puzzle"
 arch=('x86_64' 'i686')
 license=('GPL')
@@ -17,7 +17,7 @@ install=gnome-sudoku.install
 url="https://live.gnome.org/GnomeSudoku"
 groups=('gnome-extra')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('692052dcac2809ac2dd2d7e9cf72f1b2c19c9d7204bcb564537ccf36bb830784')
+sha256sums=('04a29447889448ee5d5840cb5b2fd05ce6031c38a24809ce4919647ee6f485d7')
 
 build() {
   cd $pkgname-$pkgver
