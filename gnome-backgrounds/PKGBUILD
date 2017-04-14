@@ -2,7 +2,7 @@
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-backgrounds
-pkgver=3.23.91
+pkgver=3.24.0
 pkgrel=1
 pkgdesc="Background images and data for GNOME"
 arch=(any)
@@ -11,7 +11,7 @@ url="http://www.gnome.org"
 license=('GPL')
 groups=('gnome')
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('0507d7619b00a0c3030fe86979ff8f4cb87dab117c467d00381ad442530906f5')
+sha256sums=('cbda4c2159292940fa4b972df77379be716590c7b62bb4b2b9fa8e99749c71ca')
 
 build() {
   cd "$pkgname-$pkgver"
