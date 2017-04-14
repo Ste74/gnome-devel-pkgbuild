@@ -4,8 +4,8 @@
 # Contributor: Yosef Or Boczko <yoseforb@gnome.org>
 
 pkgname=gnome-software
-pkgver=3.23.92
-pkgrel=2
+pkgver=3.24.1
+pkgrel=1
 pkgdesc="GNOME Software Tools"
 arch=(i686 x86_64)
 license=('GPL2')
@@ -15,7 +15,7 @@ depends=(gtk3 appstream-glib libsoup gsettings-desktop-schemas gnome-desktop pac
 	 libgudev)
 makedepends=(intltool)
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('fa0e59bc2f4c4653873e3da8ca38793a1fcbe73bfd18a11de31d78ba5ab3e024')
+sha256sums=('32a9a4a4e9f141d845d3bc30b0c9b92e75106bf586e293e66e5cb794f61e77d8')
 
 prepare () {
   cd $pkgname-$pkgver
