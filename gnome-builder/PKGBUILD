@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gnome-builder
-pkgver=3.24.0
+pkgver=3.24.1
 pkgrel=1
 pkgdesc="An IDE for writing GNOME-based software"
 url="https://wiki.gnome.org/Apps/Builder"
@@ -14,7 +14,7 @@ depends=('gtksourceview3' 'devhelp' 'libgit2-glib' 'gjs' 'python-gobject' 'clang
 makedepends=(intltool llvm gobject-introspection gtk-doc)
 groups=(gnome-extra)
 source=(http://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('3c2948f451dd107b3838bd6580bd7df95aa455d16f595aefab6e7553cccfc8d2')
+sha256sums=('d0630dceeaf09285640ecec79545baf811321636a441824a9243e7f3a4467583')
 
 
 build() {
