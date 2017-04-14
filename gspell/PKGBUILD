@@ -1,7 +1,7 @@
 # $Id: PKGBUILD 264771 2016-04-12 21:46:30Z heftig $
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 pkgname=gspell
-pkgver=1.4.0
+pkgver=1.4.1
 pkgrel=1
 pkgdesc="a flexible API to implement the spell checking in a GTK+ application"
 arch=('i686' 'x86_64')
@@ -10,7 +10,7 @@ license=('GPL2')
 depends=('gtk3' 'enchant' 'libxml2' 'iso-codes')
 makedepends=('intltool' 'gobject-introspection' 'vala')
 source=("https://download.gnome.org/sources/gspell/${pkgver:0:3}/gspell-${pkgver}.tar.xz")
-sha256sums=('8d317c6bf6ae298b0a6c89aed63bc133c85c8ce7e8e799d870da560ad10b2d4e')
+sha256sums=('442f88fecd7f9e00a6a9d0af2d762744dd3c119217ff11d6739500f75b0f10be')
 
 build() {
   cd "$pkgname-$pkgver"
