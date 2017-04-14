@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=totem
-pkgver=3.23.90
+pkgver=3.24.0
 pkgrel=1
 pkgdesc="GNOME3 movie player based on GStreamer"
 url="http://www.gnome.org"
@@ -27,7 +27,7 @@ install=totem.install
 conflicts=(totem-plugin)
 replaces=(totem-plugin)
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('5beee6d8410bcec09b3efa183d69e51717764c5fe278969244b3c152abacd909')
+sha256sums=('9bd78f7b940e886b5c809acdfe00a610a834de5080dd40272b92835528a58d01')
 
 prepare() {
   cd "$pkgname-$pkgver"
