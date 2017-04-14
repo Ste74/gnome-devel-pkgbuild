@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=eog
-pkgver=3.24.0
+pkgver=3.24.1
 pkgrel=1
 pkgdesc="Eye of Gnome: An image viewing and cataloging program"
 arch=(i686 x86_64)
@@ -15,7 +15,7 @@ groups=(gnome)
 options=('!emptydirs')
 url="https://wiki.gnome.org/Apps/EyeOfGnome"
 source=(https://download.gnome.org/sources/$pkgname/${pkgver:0:4}/$pkgname-$pkgver.tar.xz)
-sha256sums=('c640bb76f202d06858e4d82be626d83256326f9cedfb46ae3b450a82ff3f11cc')
+sha256sums=('f51ee116e2c159fac1719e003a32e1cb6cbff51914fd1f6409f461a790ff27e7')
 
 build() {
   cd "$pkgname-$pkgver"
