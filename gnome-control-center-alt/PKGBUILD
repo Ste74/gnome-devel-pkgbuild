@@ -4,8 +4,8 @@
 
 pkgname=gnome-control-center-alt
 _pkgname=gnome-control-center
-pkgver=3.23.92
-pkgrel=2
+pkgver=3.24.1
+pkgrel=1
 pkgdesc="The Control Center for GNOME"
 license=(GPL)
 arch=(i686 x86_64)
@@ -21,7 +21,7 @@ url="http://www.gnome.org"
 install=gnome-control-center-alt.install
 options=('!emptydirs')
 source=(http://download.gnome.org/sources/$_pkgname/${pkgver:0:4}/$_pkgname-$pkgver.tar.xz)
-sha256sums=('419d768cd56ecc7ddcffefe6bee887619a039e542f0b3580ef3512f93cfead81')
+sha256sums=('30cc8e19fdddf4bde7607fa3897bbba837659e1df9db0de8741723053889a53c')
 
 prepare() {
   cd $_pkgname-$pkgver
